@@ -10,7 +10,7 @@ public class Arrow : MonoBehaviour
     {
         if (other.gameObject.tag=="Enemy")
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 }
