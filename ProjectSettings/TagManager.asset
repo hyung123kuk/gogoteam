@@ -11,6 +11,7 @@ TagManager:
   - Arrow
   - EnemyRange
   - ground
+  - SelManager
   layers:
   - Default
   - TransparentFX
@@ -32,7 +33,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - OverUI
   - 
   - 
   - 
