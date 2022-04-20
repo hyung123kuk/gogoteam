@@ -8,11 +8,12 @@ public class EnemySlime : MonoBehaviour
 
     public int maxHealth; //최대 체력
     public int curHealth; //현재 체력
-    public Transform target; //목표
     public BoxCollider meleeArea; //몬스터 공격범위
     public bool isChase; //추적중인 상태
     public bool isAttack; //현재 공격중
-  
+    public Transform respawn;
+
+    Transform target;
     Rigidbody rigid;
     BoxCollider boxCollider;
     Material mat; //피격시 색깔변하게
@@ -26,21 +27,35 @@ public class EnemySlime : MonoBehaviour
         mat = GetComponentInChildren<SkinnedMeshRenderer>().material;
         nav = GetComponent<NavMeshAgent>();
         anim=GetComponent<Animator>();
-
-        Invoke("ChaseStart", 0.5f);
-    }
-
-    void ChaseStart() //추적중
-    {
-        isChase = true;
-        anim.SetBool("isWalk", true);
+        target = GameObject.FindGameObjectWithTag("Player").transform;
     }
     void Update()
     {
-        if(nav.enabled) //추적중이면
-        nav.SetDestination(target.position); //타겟추적
-        nav.isStopped = !isChase;
-        transform.LookAt(target); //플레이어 바라보기
+        Targerting();
+        if (Vector3.Distance(target.position,transform.position)<=15f && nav.enabled)
+        {
+            if (!isAttack)
+            {
+                isChase = true;
+                nav.isStopped = false;
+                nav.SetDestination(target.position);
+                anim.SetBool("isWalk", true);
+            }
+        }
+        else if(Vector3.Distance(target.position,transform.position) > 15f && nav.enabled)
+        {
+            nav.SetDestination(respawn.position);
+            isChase = false;
+            if (Vector3.Distance(respawn.position,transform.position)<1f)
+            {
+                nav.isStopped = true;
+                anim.SetBool("isWalk", false);
+            }
+     
+        }
+
+        if (isChase || isAttack) //추적이나 공격중일때만
+            transform.LookAt(target); //플레이어 바라보기
     }
 
     void FreezeVelocity() //이동보정
@@ -75,16 +90,16 @@ public class EnemySlime : MonoBehaviour
         yield return new WaitForSeconds(0.7f);
         meleeArea.enabled = true;
 
-        yield return new WaitForSeconds(0.9f);
+        yield return new WaitForSeconds(0.8f);
         meleeArea.enabled = false;
-        
+        yield return new WaitForSeconds(0.5f);
         isChase = true;
         isAttack = false;
         anim.SetBool("isAttack", false);
     }
     void FixedUpdate()
     {
-        Targerting();
+        
         FreezeVelocity();
     }
 
@@ -94,7 +109,7 @@ public class EnemySlime : MonoBehaviour
         {
             Weapons weapon = other.GetComponent<Weapons>();
             curHealth -= weapon.damage;
-            
+           
             StartCoroutine(OnDamage());
             
         }
@@ -110,19 +125,19 @@ public class EnemySlime : MonoBehaviour
     IEnumerator OnDamage() 
     {
         mat.color = Color.red;
+        
         yield return new WaitForSeconds(0.1f);
 
         if(curHealth>0)
         {
             mat.color = Color.white;
-
         }
         else
         {
             mat.color = Color.black;
             isChase = false; //죽었으니 추적중지
             anim.SetTrigger("doDie");
-            Destroy(gameObject, 0.5f);
+            Destroy(gameObject, 2f);
         }
     }
 }

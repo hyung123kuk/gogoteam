@@ -8,6 +8,7 @@ public class PlayerST : MonoBehaviour
     public Type CharacterType;
     Transform _transform;
     Rigidbody rigid;
+    private float TimePrev = 0f;
 
     public float jump = 5.0f; //점프력
     public float speed = 5.0f;  //플레이어 이동속도
@@ -38,7 +39,7 @@ public class PlayerST : MonoBehaviour
     bool Ddown; //쉬프트입력
     bool isJump; //현재 점프중?
     bool isDodge; //현재 회피중?
-    float dodgecool;
+    float dodgecool = 3f;
 
     Vector3 moveVec;
     Vector3 dodgeVec;
@@ -55,7 +56,7 @@ public class PlayerST : MonoBehaviour
 
     void Start()
     {
-        
+        TimePrev = Time.time; //현재 시간을 대입
     }
 
     void Anima() //애니메이션 
@@ -158,15 +159,16 @@ public class PlayerST : MonoBehaviour
 
     void Dodge()
     {
-        if (Ddown && !isJump)
+        if (Ddown && !isJump && Time.time - TimePrev > dodgecool)
         {
             dodgeVec = moveVec;
             speed *= 2;
             anim.SetTrigger("doDodge");
             isDodge = true;
             isDamage = true;
+            TimePrev = Time.time;
 
-            Invoke("DodgeOut", 0.6f); //구르기를 하면 0.4초후에 이동속도가 정상으로돌아옴
+            Invoke("DodgeOut", 0.4f); //구르기를 하면 0.4초후에 이동속도가 정상으로돌아옴
         }
     }
 
@@ -185,7 +187,7 @@ public class PlayerST : MonoBehaviour
         fDowning = Input.GetButton("Fire1");
         fUp = Input.GetButtonUp("Fire1");
         sDown = Input.GetButtonDown("Jump"); //점프사용 스페이스바
-        Rdown = Input.GetButton("Run"); //달리기  F키 임시용
+        Rdown = Input.GetButton("Run"); //달리기  알트키 
         Ddown = Input.GetButtonDown("Dodge"); //구르기 쉬프트키
 
 
