@@ -9,7 +9,6 @@ public class Weapons : MonoBehaviour
     public int damage; //공격력
     public float rate; //공격속도
     public BoxCollider meleeArea; //근딜범위
-    public TrailRenderer trailEffect; //근접공격 이펙트
     public Transform arrowPos; //화살나가는위치
     public GameObject arrow; //화살
     public PlayerST playerST;
@@ -57,9 +56,9 @@ public class Weapons : MonoBehaviour
         playerST.bowPower = 0;
 
         yield return new WaitForSeconds(0.25f);
-
+        
         playerST.isFireReady = true;
-
-        yield return null;
+        yield return new WaitForSeconds(0.1f);
+        playerST.archerattack = false;
     }
 }

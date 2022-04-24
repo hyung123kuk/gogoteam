@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerST : MonoBehaviour
 {
     public enum Type { Warrior, Archer, Mage };
-    public Type CharacterType;
+    public Type CharacterType; //원래 앞에 static이 붙어있었는데 테스트할때 인스펙터창에 타입이 안떠서 임시로 뻈어요
     Transform _transform;
     Rigidbody rigid;
     private float TimePrev = 0f;
@@ -15,8 +15,8 @@ public class PlayerST : MonoBehaviour
     public GameObject cam; //플레이어 카메라
     public CapsuleCollider SelectPlayer; //제어할 플레이어
     public Animator anim; //애니메이션
-    public int health; //체력
-    public int maxhealth; //체력최대치
+    public static int health=0; //체력
+    public int maxhealth=100; //체력최대치
     public Weapons equipWeapon;    //현재 무기. 나중에 배열로 여러무기를 등록하려고함
 
     public float bowMinPower = 0.2f;  
@@ -33,13 +33,15 @@ public class PlayerST : MonoBehaviour
     bool fDowning; //마우스 왼쪽버튼을 눌르고 있다면 true
     bool fUp;
     public bool isFireReady=true;  //무기 rate가 fireDelay보다 작다면 true로 공격가능상태
-    bool isDamage; //무적타임. 연속으로 다다닥 맞을수있기때문에
+    public bool isDamage; //무적타임. 연속으로 다다닥 맞을수있기때문에
     bool sDown; //점프입력
     bool Rdown;//알트입력
     bool Ddown; //쉬프트입력
     bool isJump; //현재 점프중?
     bool isDodge; //현재 회피중?
     float dodgecool = 3f;
+    public bool archerattack=false; //현재 궁수공격중
+    bool isStun; //현재 스턴상태
 
     Vector3 moveVec;
     Vector3 dodgeVec;
@@ -51,12 +53,12 @@ public class PlayerST : MonoBehaviour
         _transform = GetComponent<Transform>();
         anim = GetComponentInChildren<Animator>();
         rigid = GetComponent<Rigidbody>();
- 
     }
 
     void Start()
     {
         TimePrev = Time.time; //현재 시간을 대입
+        health = maxhealth;
     }
 
     void Anima() //애니메이션 
@@ -106,11 +108,13 @@ public class PlayerST : MonoBehaviour
             fireDelay += Time.deltaTime;     //공격속도 계산
             isFireReady = equipWeapon.rate < fireDelay;  //공격 가능 타임
 
-            if (fDown && isFireReady && !isDodge)  //공격할수있을때
+            if (fDown || fDowning)
             {
-                equipWeapon.Use();
-                anim.SetTrigger("doSwing");
-                fireDelay = 0;
+                if (isFireReady && !isDodge)  //공격할수있을때
+                {
+                    equipWeapon.Use();
+                    fireDelay = 0;
+                }
             }
         }
 
@@ -126,6 +130,7 @@ public class PlayerST : MonoBehaviour
 
             if (fDowning  && isFireReady&& !isDodge && equipWeapon.rate < fireDelay)
             {
+                archerattack = true;
                 bowPower = bowMinPower;
                 anim.SetTrigger("doSwing");
                 isSootReady = false;
@@ -134,7 +139,7 @@ public class PlayerST : MonoBehaviour
             }
             else if (fUp&& !isSootReady )
             {
-               
+                archerattack = true;
                 anim.SetBool("doShot", true);
 
                 equipWeapon.Use();
@@ -190,26 +195,24 @@ public class PlayerST : MonoBehaviour
         Rdown = Input.GetButton("Run"); //달리기  알트키 
         Ddown = Input.GetButtonDown("Dodge"); //구르기 쉬프트키
 
-
-        if (isFireReady == true) //공격중이라면 이동 제한
+        if (!isStun)
         {
-            if (isDodge) //회피중이면 다른방향으로 전환이 느리게
-                moveVec = dodgeVec;
-            moveVec = (Vector3.forward * v) + (Vector3.right * h); //전 후진과 좌우 이동값 저장
-            if(Rdown)//달리는 중이면 1.4배 이속증가
-            _transform.Translate(moveVec.normalized * Time.deltaTime *speed*1.4f, Space.Self); //이동 처리를 편하게 하게해줌
-            else
-                _transform.Translate(moveVec.normalized * Time.deltaTime * speed, Space.Self); 
+            if (archerattack == false)
+            {
+                if (isDodge) //회피중이면 다른방향으로 전환이 느리게
+                    moveVec = dodgeVec;
+                moveVec = (Vector3.forward * v) + (Vector3.right * h); //전 후진과 좌우 이동값 저장
+                if (Rdown)//달리는 중이면 1.4배 이속증가
+                    _transform.Translate(moveVec.normalized * Time.deltaTime * speed * 1.4f, Space.Self); //이동 처리를 편하게 하게해줌
+                else
+                    _transform.Translate(moveVec.normalized * Time.deltaTime * speed, Space.Self);
+            }
         }
-
-       
 
         Anima(); //애니메이션
         Attack(); //근접 공격
         Jump(); //점프
         Dodge(); //구르기
-
-
     }
     void FreezeVelocity()  //카메라 버그 안생기게하는거
     {
@@ -227,18 +230,22 @@ public class PlayerST : MonoBehaviour
 
     void OnTriggerEnter(Collider other) //충돌감지
     {
-        if(other.tag == "EnemyRange")  //적에게 맞았다면
+        if(other.gameObject.tag == "EnemyRange")  //적에게 맞았다면
         {
             if (!isDamage) //무적타이밍이 아닐때만 실행
             {
-                Arrow enemyRange = other.GetComponent<Arrow>();
+                EnemyAttack enemyRange = other.GetComponent<EnemyAttack>();
                 health -= enemyRange.damage;
                 StartCoroutine(OnDamage());
+               
             }
         }
-        if(other.tag == "Enemy")
+        else if (other.gameObject.tag == "Boss1Skill")  //1보스 스턴스킬
         {
-            isJump = false;
+            EnemyAttack enemyRange = other.GetComponent<EnemyAttack>();
+            health -= enemyRange.damage;
+            
+            StartCoroutine(OnDamageNuck());
         }
     }
     void OnCollisionEnter(Collision collision)
@@ -257,6 +264,15 @@ public class PlayerST : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
         isDamage = false;
+
+    }
+    IEnumerator OnDamageNuck() //무적타임
+    {
+        anim.SetTrigger("doStun");
+        isStun = true;
+        
+        yield return new WaitForSeconds(3f);
+        isStun = false;
 
     }
 

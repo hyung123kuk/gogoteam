@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
         {
             if (CharSel.character1 == CharacterSel.Type.Warrior)
             {
+                
                 Instantiate(Wor, startPoint.position, Quaternion.identity);
             }
             else if (CharSel.character1 == CharacterSel.Type.Archer)

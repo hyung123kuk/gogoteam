@@ -160,7 +160,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6d43ad297823c745862c0efde9f110c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CharacterType: 2
   jump: 5
   speed: 3
   cam: {fileID: 4053077490124688413}
@@ -174,6 +173,7 @@ MonoBehaviour:
   bowChargingTime: 1
   isSootReady: 1
   isFireReady: 1
+  isDamage: 0
 --- !u!1 &3379968210147162559
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,9 @@ TagManager:
   - EnemyRange
   - ground
   - SelManager
+  - Slime
+  - EnemyBullet
+  - Boss1Skill
   layers:
   - Default
   - TransparentFX
@@ -23,8 +26,8 @@ TagManager:
   - EnemyDead
   - Player
   - EnemyRange
-  - 
-  - 
+  - World
+  - Boss
   - 
   - 
   - 
