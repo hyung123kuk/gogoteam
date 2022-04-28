@@ -17,7 +17,10 @@ public class PlayerST : MonoBehaviour
     public Animator anim; //애니메이션
     public static int health=0; //체력
     public int maxhealth=100; //체력최대치
-    public Weapons equipWeapon;    //현재 무기. 나중에 배열로 여러무기를 등록하려고함
+    public Weapons[] equipWeapon;    //현재 무기. 나중에 배열로 여러무기를 등록하려고함
+    public int NowWeapon; //현재 무기
+    public  enum SwordNames {Sword1, Sword5_normal, Sword5_rare, Sword10_normal, Sword10_rare }; //무기이름 위의 배열의 순서에 따라.
+    public SwordNames basicSword=0 ;
 
     public float bowMinPower = 0.2f;  
     public float bowPower; // 화살 충전 데미지
@@ -106,13 +109,13 @@ public class PlayerST : MonoBehaviour
         if (CharacterType == Type.Warrior)
         {
             fireDelay += Time.deltaTime;     //공격속도 계산
-            isFireReady = equipWeapon.rate < fireDelay;  //공격 가능 타임
+            isFireReady = equipWeapon[NowWeapon].rate < fireDelay;  //공격 가능 타임
 
             if (fDown || fDowning)
             {
                 if (isFireReady && !isDodge)  //공격할수있을때
                 {
-                    equipWeapon.Use();
+                    equipWeapon[NowWeapon].Use();
                     fireDelay = 0;
                 }
             }
@@ -128,7 +131,7 @@ public class PlayerST : MonoBehaviour
                 bowPower += Time.deltaTime;
             }
 
-            if (fDowning  && isFireReady&& !isDodge && equipWeapon.rate < fireDelay)
+            if (fDowning  && isFireReady&& !isDodge && equipWeapon[NowWeapon].rate < fireDelay)
             {
                 archerattack = true;
                 bowPower = bowMinPower;
@@ -142,7 +145,7 @@ public class PlayerST : MonoBehaviour
                 archerattack = true;
                 anim.SetBool("doShot", true);
 
-                equipWeapon.Use();
+                equipWeapon[NowWeapon].Use();
                 
                 
              }
@@ -186,33 +189,39 @@ public class PlayerST : MonoBehaviour
 
     void Update()
     {
-        h = Input.GetAxisRaw("Horizontal");    //X좌표 입력받기
-        v = Input.GetAxisRaw("Vertical"); //Z좌표 입력받기
-        fDown = Input.GetButtonDown("Fire1"); //마우스1번키 입력
-        fDowning = Input.GetButton("Fire1");
-        fUp = Input.GetButtonUp("Fire1");
-        sDown = Input.GetButtonDown("Jump"); //점프사용 스페이스바
-        Rdown = Input.GetButton("Run"); //달리기  알트키 
-        Ddown = Input.GetButtonDown("Dodge"); //구르기 쉬프트키
 
-        if (!isStun)
-        {
-            if (archerattack == false)
+        if (inventory.iDown)
+            return;
+        
+
+            h = Input.GetAxisRaw("Horizontal");    //X좌표 입력받기
+            v = Input.GetAxisRaw("Vertical"); //Z좌표 입력받기
+            fDown = Input.GetButtonDown("Fire1"); //마우스1번키 입력
+            fDowning = Input.GetButton("Fire1");
+            fUp = Input.GetButtonUp("Fire1");
+            sDown = Input.GetButtonDown("Jump"); //점프사용 스페이스바
+            Rdown = Input.GetButton("Run"); //달리기  알트키 
+            Ddown = Input.GetButtonDown("Dodge"); //구르기 쉬프트키
+
+            if (!isStun)
             {
-                if (isDodge) //회피중이면 다른방향으로 전환이 느리게
-                    moveVec = dodgeVec;
-                moveVec = (Vector3.forward * v) + (Vector3.right * h); //전 후진과 좌우 이동값 저장
-                if (Rdown)//달리는 중이면 1.4배 이속증가
-                    _transform.Translate(moveVec.normalized * Time.deltaTime * speed * 1.4f, Space.Self); //이동 처리를 편하게 하게해줌
-                else
-                    _transform.Translate(moveVec.normalized * Time.deltaTime * speed, Space.Self);
+                if (archerattack == false)
+                {
+                    if (isDodge) //회피중이면 다른방향으로 전환이 느리게
+                        moveVec = dodgeVec;
+                    moveVec = (Vector3.forward * v) + (Vector3.right * h); //전 후진과 좌우 이동값 저장
+                    if (Rdown)//달리는 중이면 1.4배 이속증가
+                        _transform.Translate(moveVec.normalized * Time.deltaTime * speed * 1.4f, Space.Self); //이동 처리를 편하게 하게해줌
+                    else
+                        _transform.Translate(moveVec.normalized * Time.deltaTime * speed, Space.Self);
+                }
             }
-        }
-
-        Anima(); //애니메이션
-        Attack(); //근접 공격
-        Jump(); //점프
-        Dodge(); //구르기
+        Debug.Log("shield");
+            Anima(); //애니메이션
+            Attack(); //근접 공격
+            Jump(); //점프
+            Dodge(); //구르기
+        
     }
     void FreezeVelocity()  //카메라 버그 안생기게하는거
     {
@@ -273,6 +282,14 @@ public class PlayerST : MonoBehaviour
         
         yield return new WaitForSeconds(3f);
         isStun = false;
+
+    }
+
+    public void WeaponChange( SwordNames WeaponNum ) //무기를 바꿨을때 캐릭터에 적용시키기 위해 사용하는 함수
+    {
+        equipWeapon[NowWeapon].gameObject.SetActive(false);
+        NowWeapon =(int) WeaponNum;
+        equipWeapon[NowWeapon].gameObject.SetActive(true);
 
     }
 

@@ -51,6 +51,9 @@ public class CameraRotate : MonoBehaviour
    
     void Update()
     {
+        if (inventory.iDown)
+            return;
+
         if (target)
         {
             //마우스 스크롤과의 거리계산

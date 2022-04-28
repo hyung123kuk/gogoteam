@@ -17,6 +17,8 @@ public class ComboHit : MonoBehaviour
 
     void Update()
     {
+        if (inventory.iDown)
+            return;
         if (Time.time - lastClickdTime > maxComboDelay)
         {
             noOfClicks = 0;

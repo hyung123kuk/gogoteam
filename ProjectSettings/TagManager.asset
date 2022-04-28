@@ -15,6 +15,15 @@ TagManager:
   - Slime
   - EnemyBullet
   - Boss1Skill
+  - slot
+  - weaponslot
+  - chest
+  - pants
+  - helm
+  - shoulder
+  - boots
+  - gloves
+  - cloak
   layers:
   - Default
   - TransparentFX
@@ -37,7 +46,7 @@ TagManager:
   - 
   - 
   - OverUI
-  - 
+  - equip
   - 
   - 
   - 
