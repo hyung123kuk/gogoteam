@@ -24,6 +24,8 @@ TagManager:
   - boots
   - gloves
   - cloak
+  - Boss2Skill
+  - Boss3Skill
   layers:
   - Default
   - TransparentFX

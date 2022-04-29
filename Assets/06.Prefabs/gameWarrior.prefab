@@ -1522,6 +1522,7 @@ MonoBehaviour:
   - {fileID: 8007892902186627813}
   - {fileID: 6160746004620546694}
   NowWeapon: 0
+  basicSword: 0
   bowMinPower: 0.2
   bowPower: 0.2
   bowChargingTime: 1

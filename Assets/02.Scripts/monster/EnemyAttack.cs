@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyAttack : MonoBehaviour
 {
     public int damage;
-    public bool isMelee; 
+    public bool isMelee;
     private void OnTriggerEnter(Collider other)
     {
         

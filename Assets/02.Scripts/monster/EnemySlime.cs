@@ -12,6 +12,7 @@ public class EnemySlime : MonoBehaviour
     public bool isChase; //추적중인 상태
     public bool isAttack; //현재 공격중
     public Transform respawn;
+    private bool isDie;
 
     Transform target;
     Rigidbody rigid;
@@ -31,6 +32,10 @@ public class EnemySlime : MonoBehaviour
     }
     void Update()
     {
+        if (isDie)  //죽었으면 현재실행중인 코로틴 강제종료
+        {
+            StopAllCoroutines();
+        }
         target = GameObject.FindGameObjectWithTag("Player").transform;
         Targerting();
         if (Vector3.Distance(target.position,transform.position)<=15f && nav.enabled)
@@ -59,7 +64,8 @@ public class EnemySlime : MonoBehaviour
         }
 
         if (isChase || isAttack) //추적이나 공격중일때만
-            transform.LookAt(target); //플레이어 바라보기
+            if (!isDie && !PlayerST.isJump)
+                transform.LookAt(target); //플레이어 바라보기
     }
 
     void FreezeVelocity() //이동보정
@@ -79,7 +85,7 @@ public class EnemySlime : MonoBehaviour
             Physics.SphereCastAll(transform.position,
             targetRadius, transform.forward, targetRange, LayerMask.GetMask("Player"));  //레이캐스트
 
-        if(rayHits.Length>0 && !isAttack) //레이캐스트에 플레이어가 잡혔다면 && 현재 공격중이 아니라면
+        if(rayHits.Length>0 && !isAttack && !isDie) //레이캐스트에 플레이어가 잡혔다면 && 현재 공격중이 아니라면
         {
             StartCoroutine(Attack());
         }
@@ -145,7 +151,8 @@ public class EnemySlime : MonoBehaviour
             boxCollider.enabled = false;
             mat.color = Color.black;
             isChase = false; //죽었으니 추적중지
-            anim.SetTrigger("doDie");
+            isDie = true;
+            anim.SetBool("isDie",true);
             Destroy(gameObject, 2f);
         }
     }

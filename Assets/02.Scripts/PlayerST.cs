@@ -40,7 +40,7 @@ public class PlayerST : MonoBehaviour
     bool sDown; //점프입력
     bool Rdown;//알트입력
     bool Ddown; //쉬프트입력
-    bool isJump; //현재 점프중?
+    public static bool isJump; //현재 점프중?
     bool isDodge; //현재 회피중?
     float dodgecool = 3f;
     public bool archerattack=false; //현재 궁수공격중
@@ -174,7 +174,7 @@ public class PlayerST : MonoBehaviour
             anim.SetTrigger("doDodge");
             isDodge = true;
             isDamage = true;
-            TimePrev = Time.time;
+            TimePrev = Time.time; 
 
             Invoke("DodgeOut", 0.4f); //구르기를 하면 0.4초후에 이동속도가 정상으로돌아옴
         }
@@ -216,7 +216,7 @@ public class PlayerST : MonoBehaviour
                         _transform.Translate(moveVec.normalized * Time.deltaTime * speed, Space.Self);
                 }
             }
-        Debug.Log("shield");
+        //Debug.Log("shield");
             Anima(); //애니메이션
             Attack(); //근접 공격
             Jump(); //점프
@@ -239,22 +239,48 @@ public class PlayerST : MonoBehaviour
 
     void OnTriggerEnter(Collider other) //충돌감지
     {
-        if(other.gameObject.tag == "EnemyRange")  //적에게 맞았다면
+        if (other.gameObject.tag == "EnemyRange")  //적에게 맞았다면
+        {
+            if (!isDamage) //무적타이밍이 아닐때만 실행
+            {
+                Debug.Log("아야!");
+                EnemyAttack enemyRange = other.GetComponent<EnemyAttack>();
+                health -= enemyRange.damage;
+                StartCoroutine(OnDamage());
+
+            }
+        }
+        else if (other.gameObject.tag == "Boss1Skill")  //1보스 스턴스킬
         {
             if (!isDamage) //무적타이밍이 아닐때만 실행
             {
                 EnemyAttack enemyRange = other.GetComponent<EnemyAttack>();
                 health -= enemyRange.damage;
-                StartCoroutine(OnDamage());
-               
+
+                StartCoroutine(OnDamageNuck());
             }
         }
-        else if (other.gameObject.tag == "Boss1Skill")  //1보스 스턴스킬
+        else if (other.gameObject.tag == "Boss2Skill")  //최종보스 1.5초스턴스킬
         {
-            EnemyAttack enemyRange = other.GetComponent<EnemyAttack>();
-            health -= enemyRange.damage;
-            
-            StartCoroutine(OnDamageNuck());
+            if (!isDamage) //무적타이밍이 아닐때만 실행
+            {
+                EnemyAttack enemyRange = other.GetComponent<EnemyAttack>();
+                health -= enemyRange.damage;
+
+                StartCoroutine(OnDamageNuck2());
+            }
+        
+        }
+        else if (other.gameObject.tag == "Boss3Skill")  //최종보스 5초스턴스킬
+        {
+            if (!isDamage) //무적타이밍이 아닐때만 실행
+            {
+                EnemyAttack enemyRange = other.GetComponent<EnemyAttack>();
+                health -= enemyRange.damage;
+
+                StartCoroutine(OnDamageNuck3());
+            }
+
         }
     }
     void OnCollisionEnter(Collision collision)
@@ -272,15 +298,37 @@ public class PlayerST : MonoBehaviour
         isDamage = true; //무적타임 true
 
         yield return new WaitForSeconds(1f);
+        
         isDamage = false;
 
     }
     IEnumerator OnDamageNuck() //무적타임
     {
-        anim.SetTrigger("doStun");
+        anim.SetBool("isStun", true);
         isStun = true;
         
         yield return new WaitForSeconds(3f);
+        anim.SetBool("isStun", false);
+        isStun = false;
+
+    }
+    IEnumerator OnDamageNuck2() //무적타임
+    {
+        anim.SetBool("isStun",true);
+        isStun = true;
+
+        yield return new WaitForSeconds(1.5f);
+        anim.SetBool("isStun", false);
+        isStun = false;
+
+    }
+    IEnumerator OnDamageNuck3() //무적타임
+    {
+        anim.SetBool("isStun", true);
+        isStun = true;
+
+        yield return new WaitForSeconds(5f);
+        anim.SetBool("isStun", false);
         isStun = false;
 
     }
