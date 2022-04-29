@@ -277,7 +277,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDra
         swapSlot.itemImage.sprite = swapSlot.item.itemImage;
     } //슬롯 아이템 서로 바꾸기
 
-    private void EqItem(Slot EqSlot)
+    private void EqItem(Slot EqSlot )
     {
         EqSlot.item = item;
         item = null;
@@ -338,10 +338,144 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDra
 
     public void OnDrop(PointerEventData eventData)
     {
-        if (DragSlot.instance.dragSlot != null)
+
+
+
+        if (gameObject.layer == LayerMask.NameToLayer("equip") && DragSlot.instance.dragSlot.item.itemType != Item.ItemType.Equipment) { Debug.Log("장비아닌거->장비창"); } //장비 아닌 것-> 장비창으로 드래그시 장착을 막는 곳
+        else if (DragSlot.instance.dragSlot.gameObject.layer == LayerMask.NameToLayer("equip") && item!=null && item.itemType != Item.ItemType.Equipment) { Debug.Log("장비창->장비아닌거"); } //장비창 -> 장비 아닌 것 드래그시 장착을 막는 곳
+        else if (DragSlot.instance.dragSlot.gameObject.layer == LayerMask.NameToLayer("equip") && item == null) { ChangeSlot(); }
+        else if (gameObject.tag == "weaponslot") // 일반슬롯 무기 -> 무기창으로 옮길때
+        {
+            if (DragSlot.instance.dragSlot.item.equipType == Item.EquipType.Sword)
+            {
+                DragSlot.instance.dragSlot.WeaponChange.WeaponChange(DragSlot.instance.dragSlot.item.SwordNames);
+                ChangeSlot();
+            }
+        }
+        else if (DragSlot.instance.dragSlot.tag == "weaponslot") //무기창 -> 일반 슬롯으로 옮길떄
+        {
+            if (item.equipType == Item.EquipType.Sword)
+            {
+                    WeaponChange.WeaponChange(item.SwordNames);
+               
+                ChangeSlot();
+            }
+        }
+
+        else if (gameObject.tag == "chest")
+        {
+            if (DragSlot.instance.dragSlot.item.equipType == Item.EquipType.chest)
+            {
+                ChangeSlot();
+            }
+        }
+        else if (DragSlot.instance.dragSlot.tag == "chest")
+        {
+            if (item.equipType == Item.EquipType.chest)
+            {
+                ChangeSlot();
+            }
+        }
+
+        else if (gameObject.tag == "pants")
+        {
+            if (DragSlot.instance.dragSlot.item.equipType == Item.EquipType.pants)
+            {
+                ChangeSlot();
+            }
+        }
+        else if (DragSlot.instance.dragSlot.tag == "pants")
+        {
+            if (item.equipType == Item.EquipType.pants)
+            {
+                ChangeSlot();
+            }
+        }
+
+        else if (gameObject.tag == "helm")
+        {
+            if (DragSlot.instance.dragSlot.item.equipType == Item.EquipType.helm)
+            {
+                ChangeSlot();
+            }
+        }
+        else if (DragSlot.instance.dragSlot.tag == "helm")
+        {
+            if (item.equipType == Item.EquipType.helm)
+            {
+                ChangeSlot();
+            }
+        }
+
+        else if (gameObject.tag == "shoulder")
+        {
+            if (DragSlot.instance.dragSlot.item.equipType == Item.EquipType.shoulder)
+            {
+                ChangeSlot();
+            }
+        }
+        else if (DragSlot.instance.dragSlot.tag == "shoulder")
+        {
+            if (item.equipType == Item.EquipType.shoulder)
+            {
+                ChangeSlot();
+            }
+        }
+
+        else if (gameObject.tag == "boots")
+        {
+            if (DragSlot.instance.dragSlot.item.equipType == Item.EquipType.boots)
+            {
+                ChangeSlot();
+            }
+        }
+        else if (DragSlot.instance.dragSlot.tag == "boots")
+        {
+            if (item.equipType == Item.EquipType.boots)
+            {
+                ChangeSlot();
+            }
+        }
+
+        else if (gameObject.tag == "gloves")
+        {
+            if (DragSlot.instance.dragSlot.item.equipType == Item.EquipType.gloves)
+            {
+                ChangeSlot();
+            }
+        }
+        else if (DragSlot.instance.dragSlot.tag == "gloves")
+        {
+            if (item.equipType == Item.EquipType.gloves)
+            {
+                ChangeSlot();
+            }
+        }
+
+        else if (gameObject.tag == "cloak")
+        {
+            if (DragSlot.instance.dragSlot.item.equipType == Item.EquipType.cloak)
+            {
+                ChangeSlot();
+            }
+        }
+        else if (DragSlot.instance.dragSlot.tag == "cloak")
+        {
+            if (item.equipType == Item.EquipType.cloak)
+            {
+                ChangeSlot();
+            }
+        }
+
+       
+        else if (DragSlot.instance.dragSlot != null)
         {
             ChangeSlot();
         }
+
+
+
+
     }
 
     private void ChangeSlot()
