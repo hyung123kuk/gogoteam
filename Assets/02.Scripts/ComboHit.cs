@@ -17,7 +17,7 @@ public class ComboHit : MonoBehaviour
 
     void Update()
     {
-        if (inventory.iDown)
+        if (inventory.iDown || NPC.isNPCRange)
             return;
         if (Time.time - lastClickdTime > maxComboDelay)
         {
@@ -38,9 +38,12 @@ public class ComboHit : MonoBehaviour
 
     public void return1()
     {
+
         if (noOfClicks >= 2)
         {
             anim.SetBool("isAttack2", true);
+           
+            
         }
         else
         {
@@ -53,6 +56,7 @@ public class ComboHit : MonoBehaviour
         if (noOfClicks >= 3)
         {
             anim.SetBool("isAttack3", true);
+            
         }
         else
         {

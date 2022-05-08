@@ -12,12 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e11710ca97a0162498375a7e32dcba0e, type: 3}
   m_Name: Staff10(rare)
   m_EditorClassIdentifier: 
-  equipType: 2
-  itemEquLevel: 10
-  ItemGrade: 1
-  SwordNames: 0
-  itemName: Staff10(rare)
   itemType: 0
+  armortype: 3
+  equipType: 2
+  ItemGrade: 1
+  itemEquLevel: 7
+  SwordNames: 5
+  itemText: "\uBCF4\uC774\uC9C0 \uC54A\uB294 \uAC83\uC774 \uAC00\uC7A5 \uBB34\uC11C\uC6B4
+    \uAC83.. <\uC5B4\uBE44\uC2A4>"
+  itemName: "\uC5B4\uBE44\uC2A4\uC758 \uC5B4\uB460 \uC2A4\uD0DC\uD504"
   itemImage: {fileID: 21300000, guid: ed0a32aeeb2bf0f40ad22e944d930018, type: 3}
   itemPrefab: {fileID: 0}
   _PRICE: 1100

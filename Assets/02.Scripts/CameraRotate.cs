@@ -51,7 +51,7 @@ public class CameraRotate : MonoBehaviour
    
     void Update()
     {
-        if (inventory.iDown)
+        if (inventory.iDown )
             return;
 
         if (target)

@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e11710ca97a0162498375a7e32dcba0e, type: 3}
   m_Name: 10_Cloth_helm
   m_EditorClassIdentifier: 
-  equipType: 7
-  itemEquLevel: 10
-  ItemGrade: 0
-  SwordNames: 0
-  itemName: 10_Cloth_helm
   itemType: 0
+  armortype: 2
+  equipType: 7
+  ItemGrade: 0
+  itemEquLevel: 7
+  SwordNames: 5
+  itemText: 
+  itemName: "\uC0C1\uAE09 \uB808\uC774\uC628 \uBAA8\uC790"
   itemImage: {fileID: 21300000, guid: 1ff18920df7230a4dbc8e9e75c4ed7e5, type: 3}
   itemPrefab: {fileID: 0}
   _PRICE: 480

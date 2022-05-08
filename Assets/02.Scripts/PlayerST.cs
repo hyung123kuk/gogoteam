@@ -19,7 +19,7 @@ public class PlayerST : MonoBehaviour
     public int maxhealth=100; //체력최대치
     public Weapons[] equipWeapon;    //현재 무기. 나중에 배열로 여러무기를 등록하려고함
     public int NowWeapon; //현재 무기
-    public  enum SwordNames {Sword1, Sword5_normal, Sword5_rare, Sword10_normal, Sword10_rare }; //무기이름 위의 배열의 순서에 따라.
+    public  enum SwordNames {Sword1, Sword5_normal, Sword5_rare, Sword10_normal, Sword10_rare, None }; //무기이름 위의 배열의 순서에 따라.
     public SwordNames basicSword=0 ;
 
     public float bowMinPower = 0.2f;  
@@ -216,11 +216,16 @@ public class PlayerST : MonoBehaviour
                         _transform.Translate(moveVec.normalized * Time.deltaTime * speed, Space.Self);
                 }
             }
-        Debug.Log("shield");
+
             Anima(); //애니메이션
+        if (!NPC.isNPCRange)
+        {
             Attack(); //근접 공격
+        }
             Jump(); //점프
             Dodge(); //구르기
+        
+            
         
     }
     void FreezeVelocity()  //카메라 버그 안생기게하는거

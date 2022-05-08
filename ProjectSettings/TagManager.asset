@@ -24,6 +24,9 @@ TagManager:
   - boots
   - gloves
   - cloak
+  - sellslot
+  - SHOPIA
+  - PETER
   layers:
   - Default
   - TransparentFX

@@ -1,20 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class inventory : MonoBehaviour
+public class inventory : MonoBehaviour ,IPointerClickHandler,IEndDragHandler
 {
     public static bool iDown=false; // 인벤토리가 열려있으면 true
     public GameObject Inven; // 인벤토리 창
     static public Slot[] slots;
     [SerializeField]
     private GameObject SlotsParent;
-    
+    public Text Gold;
+    private PlayerStat playerStat;
+    [SerializeField]
+    private AllUI allUI;
+    [SerializeField]
+    private itemStore itemStore;
 
     private void Start()
     {
+        playerStat = FindObjectOfType<PlayerStat>();
         slots =  SlotsParent.GetComponentsInChildren<Slot>();
-        
+        allUI = FindObjectOfType<AllUI>();
+        itemStore= FindObjectOfType<itemStore>();
+        GoldUpdate();
+
+
     }
 
 
@@ -23,46 +35,144 @@ public class inventory : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.I)) //인벤토리 켜기/끄기
         {
             iDown = !iDown;
-            if (!iDown) //꺼져있음
+            if (!iDown) //끔
             {
-                Inven.SetActive(false);
-                Cursor.lockState = CursorLockMode.Locked;
+                               
+                invenOff();
+                
             }
-            else //켜져있음
+            else //킴
             {
-                Inven.SetActive(true);
-                Cursor.lockState = CursorLockMode.None;
+                
+                invenOn();
+                allUI.InvenTop();
             }
-
-        }
-        
+        }        
     }
 
-    public void AcquireItem(Item _item, int _count = 1)
+    public void invenOn()
     {
-        if (Item.ItemType.Equipment != _item.itemType)
+        Inven.SetActive(true);
+        Cursor.lockState = CursorLockMode.Confined;
+        allUI.MouseCursor.transform_cursor.gameObject.SetActive(true);
+        iDown = true;
+        GoldUpdate();
+    }
+
+    public void invenOff()
+    {
+        itemStore.storeOff();
+        Inven.SetActive(false);
+        allUI.MouseCursor.transform_cursor.gameObject.SetActive(false);
+        allUI.MouseCursor.Init_Cursor();
+        iDown = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+   
+    public void GoldUpdate()
+    {
+        Gold.text = "Gold : " + playerStat.MONEY.ToString();
+    }
+
+    
+
+    public bool HasEmptySlot()
+    {
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (slots[i].item == null)
+            {
+                return true;
+            }
+        }
+        
+        return false;
+    }
+
+    public bool HasSameSlot(Item item)
+    {
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (slots[i].item == item)
+            {
+                return true;
+            }
+        }
+       
+        return false;
+    }
+
+    public void BuyItem(Item buyitem,int num=0)
+    {
+       
+        if (buyitem.itemType == Item.ItemType.Used)
         {
             for (int i = 0; i < slots.Length; i++)
             {
-                if (slots[i].item != null)  // null 이라면 slots[i].item.itemName 할 때 런타임 에러 나서
+                if(buyitem == slots[i].item)
                 {
-                    if (slots[i].item.itemName == _item.itemName)
-                    {
-                        slots[i].SetSlotCount(_count);
-                        return;
-                    }
+                    
+                    slots[i].SetSlotCount(num);
+                    playerStat.MONEY -= buyitem._PRICE*num;
+                    GoldUpdate();
+                    return;
                 }
             }
         }
+       
 
         for (int i = 0; i < slots.Length; i++)
         {
             if (slots[i].item == null)
             {
-                slots[i].AddItem(_item, _count);
+                if (buyitem.itemType == Item.ItemType.Used)
+                {
+                    slots[i].SetSlotCount(num);
+                    playerStat.MONEY -= buyitem._PRICE*num;
+                }
+                else
+                {
+                    playerStat.MONEY -= buyitem._PRICE;
+                }
+                slots[i].item = buyitem;
+                slots[i].itemImage.sprite = slots[i].item.itemImage;
+                slots[i].SetColor(1);
+                slots[i].ItemLimitColorRed();
+                
+                GoldUpdate();
                 return;
             }
+
         }
     }
-   
+    public void SellItem(Slot sellitem, int num = 0)
+    {
+        if (sellitem.item.itemType == Item.ItemType.Used)
+        {
+            playerStat.MONEY += Mathf.Round(sellitem.item._PRICE * 0.66f) * num;
+            sellitem.SetSlotCount(-num);
+        }
+        else
+        {
+            playerStat.MONEY += Mathf.Round(sellitem.item._PRICE * 0.66f);
+            sellitem.item = null;
+            sellitem.SetColor(0);
+        }
+       
+        
+        GoldUpdate();
+       
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        allUI.InvenTop();
+    }
+
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        allUI.InvenTop();
+    }
 }

@@ -26,16 +26,23 @@ public class Item : ScriptableObject
         shoulder
 
     }
-    public EquipType equipType;
-    public int itemEquLevel; // 아이템 장착 레벨
     public enum Type { normal, rare }
+    public enum ArmorType { steel, leather, cloth ,none}
+    public ItemType itemType; // 아이템 유형
+    public ArmorType armortype;
+    public EquipType equipType;
     public Type ItemGrade;
+    public int itemEquLevel; // 아이템 장착 레벨
+    
+
 
     public PlayerST.SwordNames SwordNames;
 
+    [TextArea]
+    public string itemText;
 
     public string itemName; // 아이템의 이름
-    public ItemType itemType; // 아이템 유형
+
     public Sprite itemImage; // 아이템의 이미지(인벤 토리 안에서 띄울)
     public GameObject itemPrefab;  // 아이템의 프리팹 (아이템 생성시 프리팹으로 찍어냄)
 

@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e11710ca97a0162498375a7e32dcba0e, type: 3}
   m_Name: 10_plate_boots
   m_EditorClassIdentifier: 
-  equipType: 3
-  itemEquLevel: 10
-  ItemGrade: 0
-  SwordNames: 0
-  itemName: 10_plate_boots
   itemType: 0
+  armortype: 0
+  equipType: 3
+  ItemGrade: 0
+  itemEquLevel: 7
+  SwordNames: 5
+  itemText: 
+  itemName: "\uBE5B\uB098\uB294 \uD2F0\uD0C0\uB284 \uBD80\uCE20"
   itemImage: {fileID: 21300000, guid: 1b932e329d2e122489394506ac8a777b, type: 3}
   itemPrefab: {fileID: 0}
   _PRICE: 350
