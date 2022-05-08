@@ -5,21 +5,22 @@ using UnityEngine.AI;
 
 public class EnemyRange : MonoBehaviour
 {
-    public int maxHealth; //최대 체력
-    public int curHealth; //현재 체력
+    public float maxHealth; //최대 체력
+    public float curHealth; //현재 체력
     public bool isChase; //추적중인 상태
     public bool isAttack; //현재 공격중
     public Transform respawn;
     public GameObject bullet;
     public Transform firepos;
+    private bool isDie;
 
     Transform target;
     Rigidbody rigid;
     BoxCollider boxCollider;
     SkinnedMeshRenderer[] mat; //피격시 색깔변하게
     NavMeshAgent nav; //추적
-    Animation ani;
-    Animation_Test anim;
+    Animator anim;
+    
 
     void Awake()
     {
@@ -27,22 +28,27 @@ public class EnemyRange : MonoBehaviour
         boxCollider = GetComponent<BoxCollider>();
         mat = GetComponentsInChildren<SkinnedMeshRenderer>();
         nav = GetComponent<NavMeshAgent>();
-        ani = GetComponent<Animation>();
-        anim = GetComponent<Animation_Test>();
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+        anim = GetComponent<Animator>();
+        
     }
     void Update()
     {
+        if (isDie)  //죽었으면 현재실행중인 코로틴 강제종료
+        {
+            StopAllCoroutines();
+        }
+        target = GameObject.FindGameObjectWithTag("Player").transform;
         Targerting();
         if (Vector3.Distance(target.position, transform.position) <= 25f && nav.enabled) //15미터 안에 포착
         {
             if (!isAttack)
             {
-                anim.RunAni();
+                anim.SetBool("isWalk", true);
                 nav.speed = 3.5f;
                 isChase = true;
                 nav.isStopped = false;
                 nav.destination = target.position;
+                
             }
         }
         else if (Vector3.Distance(target.position, transform.position) > 25f && nav.enabled) //15미터 밖
@@ -54,12 +60,13 @@ public class EnemyRange : MonoBehaviour
             if (Vector3.Distance(respawn.position, transform.position) < 1f)
             {
                 nav.isStopped = true;
-                anim.IdleAni();
+                anim.SetBool("isWalk", false);
             }
         }
 
         if (isChase || isAttack) //추적이나 공격중일때만
-            transform.LookAt(target); //플레이어 바라보기
+            if (!isDie && !PlayerST.isJump && !PlayerST.isFall)
+                transform.LookAt(target); //플레이어 바라보기
     }
 
     void FreezeVelocity() //이동보정
@@ -79,7 +86,8 @@ public class EnemyRange : MonoBehaviour
             Physics.SphereCastAll(transform.position,
             targetRadius, transform.forward, targetRange, LayerMask.GetMask("Player"));  //레이캐스트
 
-        if (rayHits.Length > 0 && !isAttack) //레이캐스트에 플레이어가 잡혔다면 && 현재 공격중이 아니라면
+
+        if (rayHits.Length > 0 && !isAttack && !isDie) //레이캐스트에 플레이어가 잡혔다면 && 현재 공격중이 아니라면
         {
             StartCoroutine(Attack());
         }
@@ -91,10 +99,10 @@ public class EnemyRange : MonoBehaviour
         isChase = false;
         isAttack = true;
         nav.isStopped = true;
-        anim.AttackAni();
+        anim.SetBool("isAttack", true);
         GameObject instantBullet = Instantiate(bullet, firepos.position, firepos.rotation);
         Rigidbody rigidBullet = instantBullet.GetComponent<Rigidbody>();
-        rigidBullet.velocity = transform.forward * 30;
+        rigidBullet.velocity = transform.forward * 20;
         Destroy(instantBullet, 2f);
 
         yield return new WaitForSeconds(0.5f);
@@ -103,7 +111,7 @@ public class EnemyRange : MonoBehaviour
         yield return new WaitForSeconds(2f);
         isChase = true;
         isAttack = false;
-        ani.Stop("Anim_Attack");
+        anim.SetBool("isAttack", false);
         nav.isStopped = false;
     }
     void FixedUpdate()
@@ -139,7 +147,7 @@ public class EnemyRange : MonoBehaviour
 
         if (curHealth > 0)
         {
-            anim.DamageAni();
+            
             foreach (SkinnedMeshRenderer mesh in mat)
                 mesh.material.color = Color.white;
         }
@@ -149,9 +157,9 @@ public class EnemyRange : MonoBehaviour
             boxCollider.enabled = false;
             foreach (SkinnedMeshRenderer mesh in mat)
                 mesh.material.color = Color.black;
-            
+            isDie = true;
             isChase = false; //죽었으니 추적중지
-            anim.DeathAni();
+            anim.SetBool("isDie", true);
             Destroy(gameObject, 1f);
         }
     }

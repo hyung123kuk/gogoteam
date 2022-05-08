@@ -5,12 +5,13 @@ using UnityEngine.AI;
 
 public class EnemyGoblin : MonoBehaviour
 {
-    public int maxHealth=100; //최대 체력
-    public int curHealth=100; //현재 체력
+    public float maxHealth =100; //최대 체력
+    public float curHealth =100; //현재 체력
     public BoxCollider meleeArea; //몬스터 공격범위
     public bool isChase; //추적중인 상태
     public bool isAttack; //현재 공격중
     public Transform respawn;
+    private bool isDie;
 
     Transform target;
     Rigidbody rigid;
@@ -30,6 +31,10 @@ public class EnemyGoblin : MonoBehaviour
     }
     void Update()
     {
+        if (isDie)  //죽었으면 현재실행중인 코로틴 강제종료
+        {
+            StopAllCoroutines();
+        }
         target = GameObject.FindGameObjectWithTag("Player").transform;
         Targerting();
         if (Vector3.Distance(target.position, transform.position) <= 15f && nav.enabled) //15미터 안에 포착
@@ -37,15 +42,15 @@ public class EnemyGoblin : MonoBehaviour
             if (!isAttack)
             {
                 anim.SetBool("isRun",false);
-                nav.speed = 3.5f;
+                nav.speed = 4.5f;
                 isChase = true;
                 nav.isStopped = false;
                 nav.destination = target.position;
                 anim.SetBool("isWalk", true);
-                if (Vector3.Distance(target.position, transform.position) >= 4f && nav.enabled)
+                if (Vector3.Distance(target.position, transform.position) >= 6f && nav.enabled)
                 {
                     anim.SetBool("isWalk", false);
-                    nav.speed = 6.5f;
+                    nav.speed = 10f;
                     anim.SetBool("isRun",true);
                 }
             }
@@ -65,7 +70,8 @@ public class EnemyGoblin : MonoBehaviour
         }
 
         if (isChase || isAttack) //추적이나 공격중일때만
-            transform.LookAt(target); //플레이어 바라보기
+            if (!isDie && !PlayerST.isJump && !PlayerST.isFall)
+                transform.LookAt(target); //플레이어 바라보기
     }
 
     void FreezeVelocity() //이동보정
@@ -85,7 +91,7 @@ public class EnemyGoblin : MonoBehaviour
             Physics.SphereCastAll(transform.position,
             targetRadius, transform.forward, targetRange, LayerMask.GetMask("Player"));  //레이캐스트
 
-        if (rayHits.Length > 0 && !isAttack) //레이캐스트에 플레이어가 잡혔다면 && 현재 공격중이 아니라면
+        if (rayHits.Length > 0 && !isAttack && !isDie) //레이캐스트에 플레이어가 잡혔다면 && 현재 공격중이 아니라면
         {
             StartCoroutine(Attack());
         }
@@ -98,10 +104,10 @@ public class EnemyGoblin : MonoBehaviour
         isAttack = true;
         nav.isStopped = true;
         anim.SetBool("isAttack", true);
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.5f);
         meleeArea.enabled = true;
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.2f);
         rigid.velocity = Vector3.zero;
         meleeArea.enabled = false;
 
@@ -139,7 +145,7 @@ public class EnemyGoblin : MonoBehaviour
     {
         mat.color = Color.red;
 
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.06f);
 
         if (curHealth > 0)
         {
@@ -150,8 +156,9 @@ public class EnemyGoblin : MonoBehaviour
             boxCollider.enabled = false;
             mat.color = Color.black;
             nav.isStopped = true;
+            isDie = true;
             isChase = false; //죽었으니 추적중지
-            anim.SetTrigger("doDie");
+            anim.SetBool("isDie",true);
             Destroy(gameObject, 2f);
         }
     }

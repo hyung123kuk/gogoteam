@@ -2110,7 +2110,7 @@ Transform:
   - {fileID: 1058692073}
   - {fileID: 638016400}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 177.28601, z: 0}
 --- !u!1 &214443523
 GameObject:
@@ -5469,7 +5469,7 @@ Transform:
   - {fileID: 958322881}
   - {fileID: 124355783}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 177.28601, z: 0}
 --- !u!1 &689404779
 GameObject:
@@ -5631,6 +5631,12 @@ Transform:
   m_Father: {fileID: 641017980}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!137 &728385997 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7268650308221031100, guid: 8b0ed2bc94ddb3b43866e9d4f3f135d9,
+    type: 3}
+  m_PrefabInstance: {fileID: 754217161370449336}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &733455670 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4453082654697664102, guid: 44736bd0a8b35b1438aa1c3f8b96b977,
@@ -7317,7 +7323,7 @@ Transform:
   - {fileID: 1234228389}
   - {fileID: 1327129497}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 177.28601, z: 0}
 --- !u!1 &961501545
 GameObject:
@@ -8953,6 +8959,12 @@ Transform:
   m_Father: {fileID: 68912919}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!137 &1161947528 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 6331341816720437104, guid: 8b0ed2bc94ddb3b43866e9d4f3f135d9,
+    type: 3}
+  m_PrefabInstance: {fileID: 754217161370449336}
+  m_PrefabAsset: {fileID: 0}
 --- !u!137 &1164369678 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 7520590493143704788, guid: 44736bd0a8b35b1438aa1c3f8b96b977,
@@ -9668,7 +9680,7 @@ MonoBehaviour:
   - type: body
     idx: 2
     list:
-    - {fileID: 0}
+    - {fileID: 1599684696}
     - {fileID: 1164846049}
     - {fileID: 427201075}
     - {fileID: 327711916}
@@ -9682,7 +9694,7 @@ MonoBehaviour:
   - type: cape
     idx: 1
     list:
-    - {fileID: 0}
+    - {fileID: 1161947528}
     - {fileID: 90529316}
   - type: gauntlets
     idx: 3
@@ -9694,7 +9706,7 @@ MonoBehaviour:
   - type: legs
     idx: 2
     list:
-    - {fileID: 0}
+    - {fileID: 728385997}
     - {fileID: 117175842}
     - {fileID: 695837295}
     - {fileID: 296139605}
@@ -12693,6 +12705,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!137 &1599684696 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8726302066822963935, guid: 8b0ed2bc94ddb3b43866e9d4f3f135d9,
+    type: 3}
+  m_PrefabInstance: {fileID: 754217161370449336}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1602393155
 GameObject:
   m_ObjectHideFlags: 0

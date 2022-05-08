@@ -3342,7 +3342,7 @@ Animator:
   m_GameObject: {fileID: 6407107809405454687}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 385f7c15c2ac7dd4e9684c064cd1a34a, type: 3}
-  m_Controller: {fileID: 9100000, guid: dda24622485dd41628cc04a17381ed53, type: 2}
+  m_Controller: {fileID: 9100000, guid: c9a75c834099a4141804070051affeb0, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3392,8 +3392,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8be3e356d071f2f42b1e5debeb1e3dc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1000
-  curHealth: 1000
+  maxHealth: 50
+  curHealth: 50
   meleeArea: {fileID: 6407107809250534675}
   isChase: 0
   isAttack: 0
