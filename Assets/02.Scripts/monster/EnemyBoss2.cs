@@ -5,8 +5,8 @@ using UnityEngine.AI;
 
 public class EnemyBoss2 : MonoBehaviour
 {
-    public int maxHealth = 100; //최대 체력
-    public int curHealth = 100; //현재 체력
+    public float maxHealth = 100; //최대 체력
+    public float curHealth = 100; //현재 체력
     public BoxCollider meleeArea; //몬스터 공격범위
     public bool isChase; //추적중인 상태
     public bool isAttack; //현재 공격중
@@ -63,7 +63,7 @@ public class EnemyBoss2 : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player").transform;
         if(isBuff)
         {
-            nav.speed = 8f;
+            nav.speed = 10f;
             EnemyAttack enemyRange = GetComponentInChildren<EnemyAttack>();
             enemyRange.damage *= 2;
         }
@@ -108,7 +108,7 @@ public class EnemyBoss2 : MonoBehaviour
         }
 
         if (isChase || isAttack) //추적이나 공격중일때만
-            if (!isDie && !PlayerST.isJump)
+            if (!isDie && !PlayerST.isJump && !PlayerST.isFall)
                 transform.LookAt(target); //플레이어 바라보기
 
 
@@ -117,7 +117,7 @@ public class EnemyBoss2 : MonoBehaviour
     }
     IEnumerator Pattern() //보스패턴
     {
-            yield return new WaitForSeconds(10f);
+            yield return new WaitForSeconds(7f);
         if (!isDie)
         {
             int ranAction = Random.Range(0, 9);
@@ -174,7 +174,7 @@ public class EnemyBoss2 : MonoBehaviour
         }
 
     }
-    IEnumerator Sohwan()
+    IEnumerator Sohwan() //해골소환
     {
         isChase = false;
         isAttack = true;
@@ -199,7 +199,7 @@ public class EnemyBoss2 : MonoBehaviour
         StartCoroutine(Pattern());
 
     }
-    IEnumerator Stun()
+    IEnumerator Stun() //스턴
     {
         isStun = true;
         isChase = false;
@@ -229,7 +229,7 @@ public class EnemyBoss2 : MonoBehaviour
         StartCoroutine(Pattern());
 
     }
-    IEnumerator Pokju()
+    IEnumerator Pokju() //폭주 버프스킬
     {
 
 
@@ -258,7 +258,7 @@ public class EnemyBoss2 : MonoBehaviour
         pokju.SetActive(false);
     }
 
-    IEnumerator FireBall()
+    IEnumerator FireBall() //공굴리기
     {
 
         isChase = false;
@@ -337,19 +337,6 @@ public class EnemyBoss2 : MonoBehaviour
 
                 StartCoroutine(OnDamage());
             }
-        
-        
-            if (other.tag == "Melee")
-            {
-                Weapons weapon = other.GetComponent<Weapons>();
-                PlayerST.health -= weapon.damage;
-            }
-            else if (other.tag == "Arrow")
-            {
-                Arrow arrow = other.GetComponent<Arrow>();
-                PlayerST.health -= arrow.damage;
-            }
-        
     }
 
     IEnumerator OnDamage()

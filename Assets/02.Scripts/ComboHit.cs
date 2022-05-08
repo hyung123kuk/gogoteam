@@ -35,7 +35,6 @@ public class ComboHit : MonoBehaviour
             noOfClicks = Mathf.Clamp(noOfClicks, 0, 3);
         }
     }
-
     public void return1()
     {
         if (noOfClicks >= 2)

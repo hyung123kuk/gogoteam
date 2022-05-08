@@ -37,7 +37,7 @@ public class CameraRotate : MonoBehaviour
     
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        
         Vector3 angles = transform.eulerAngles;
         x = angles.y;
         y = angles.x;
@@ -51,7 +51,7 @@ public class CameraRotate : MonoBehaviour
    
     void Update()
     {
-        if (inventory.iDown)
+        if (inventory.iDown || Weapons.isMeteo)
             return;
 
         if (target)

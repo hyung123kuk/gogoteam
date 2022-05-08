@@ -6,8 +6,8 @@ using UnityEngine.AI;
 public class EnemySlime : MonoBehaviour
 {
 
-    public int maxHealth; //최대 체력
-    public int curHealth; //현재 체력
+    public float maxHealth; //최대 체력
+    public float curHealth; //현재 체력
     public BoxCollider meleeArea; //몬스터 공격범위
     public bool isChase; //추적중인 상태
     public bool isAttack; //현재 공격중
@@ -64,7 +64,7 @@ public class EnemySlime : MonoBehaviour
         }
 
         if (isChase || isAttack) //추적이나 공격중일때만
-            if (!isDie && !PlayerST.isJump)
+            if (!isDie && !PlayerST.isJump &&!PlayerST.isFall)
                 transform.LookAt(target); //플레이어 바라보기
     }
 

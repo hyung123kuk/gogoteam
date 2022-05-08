@@ -9,9 +9,10 @@ public class BossBall : EnemyAttack
     public Transform target;
     NavMeshAgent navi;
     public GameObject eff;
-
+    private Rigidbody rigid;
     void Start()
     {
+        rigid = GetComponent<Rigidbody>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
         navi = GetComponent<NavMeshAgent>();
     }
@@ -21,6 +22,7 @@ public class BossBall : EnemyAttack
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
         navi.SetDestination(target.position);
+        rigid.AddTorque(transform.right * 5, ForceMode.Force);
     }
     
 }

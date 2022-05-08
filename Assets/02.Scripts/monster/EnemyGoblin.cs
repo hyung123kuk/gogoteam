@@ -5,8 +5,8 @@ using UnityEngine.AI;
 
 public class EnemyGoblin : MonoBehaviour
 {
-    public int maxHealth=100; //최대 체력
-    public int curHealth=100; //현재 체력
+    public float maxHealth =100; //최대 체력
+    public float curHealth =100; //현재 체력
     public BoxCollider meleeArea; //몬스터 공격범위
     public bool isChase; //추적중인 상태
     public bool isAttack; //현재 공격중
@@ -70,7 +70,7 @@ public class EnemyGoblin : MonoBehaviour
         }
 
         if (isChase || isAttack) //추적이나 공격중일때만
-            if (!isDie && !PlayerST.isJump)
+            if (!isDie && !PlayerST.isJump && !PlayerST.isFall)
                 transform.LookAt(target); //플레이어 바라보기
     }
 
@@ -104,10 +104,10 @@ public class EnemyGoblin : MonoBehaviour
         isAttack = true;
         nav.isStopped = true;
         anim.SetBool("isAttack", true);
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.5f);
         meleeArea.enabled = true;
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.2f);
         rigid.velocity = Vector3.zero;
         meleeArea.enabled = false;
 
@@ -145,7 +145,7 @@ public class EnemyGoblin : MonoBehaviour
     {
         mat.color = Color.red;
 
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.06f);
 
         if (curHealth > 0)
         {

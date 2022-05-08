@@ -26,6 +26,9 @@ TagManager:
   - cloak
   - Boss2Skill
   - Boss3Skill
+  - WALL
+  - CCAREA
+  - Boom
   layers:
   - Default
   - TransparentFX
@@ -39,8 +42,8 @@ TagManager:
   - EnemyRange
   - World
   - Boss
-  - 
-  - 
+  - World2
+  - Back
   - 
   - 
   - 

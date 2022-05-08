@@ -5,8 +5,8 @@ using UnityEngine.AI;
 
 public class EnemyBoss1 : MonoBehaviour
 {
-    public int maxHealth = 100; //최대 체력
-    public int curHealth = 100; //현재 체력
+    public float maxHealth = 100; //최대 체력
+    public float curHealth = 100; //현재 체력
     public BoxCollider meleeArea; //몬스터 공격범위
     public BoxCollider nuckArea; //스턴스킬 
     public SphereCollider nuckarea;
@@ -81,7 +81,7 @@ public class EnemyBoss1 : MonoBehaviour
         }
 
         if (isChase || isAttack)
-            if(!isDie && !PlayerST.isJump)
+            if(!isDie && !PlayerST.isJump && !PlayerST.isFall)
             transform.LookAt(target); //플레이어 바라보기
         
     }

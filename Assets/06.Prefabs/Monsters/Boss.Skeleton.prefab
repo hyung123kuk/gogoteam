@@ -1706,8 +1706,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.61827976, y: 1.9780846, z: 0.5389827}
-  m_Center: {x: 0.002116859, y: 0.9488106, z: 0.05533585}
+  m_Size: {x: 1.2459763, y: 2.8401408, z: 0.95778114}
+  m_Center: {x: -0.0013912623, y: 1.379839, z: 0.10032993}
 --- !u!195 &4815429379510916218
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1747,7 +1747,6 @@ MonoBehaviour:
   meleeArea: {fileID: 4815429379510916219}
   isChase: 0
   isAttack: 0
-  respawn: {fileID: 0}
 --- !u!1 &7232574585023316586
 GameObject:
   m_ObjectHideFlags: 0

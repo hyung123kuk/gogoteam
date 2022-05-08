@@ -5,8 +5,8 @@ using UnityEngine.AI;
 
 public class BossSkele : MonoBehaviour
 {
-    public int maxHealth=100; //최대 체력
-    public int curHealth=100; //현재 체력
+    public float maxHealth=100; //최대 체력
+    public float curHealth =100; //현재 체력
     public BoxCollider meleeArea; //몬스터 공격범위
     public bool isChase; //추적중인 상태
     public bool isAttack; //현재 공격중
