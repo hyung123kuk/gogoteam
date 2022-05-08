@@ -419,8 +419,8 @@ public class PlayerST : MonoBehaviour
     {
         if (inventory.iDown)
             return;
-
-        Cursor.lockState = CursorLockMode.Locked;//마우스커서 고정
+        if(!NPC.isNPCRange)
+            Cursor.lockState = CursorLockMode.Locked;//마우스커서 고정
         if (isBuff && CharacterType == Type.Warrior)  //전사 폭주상태면 공격 애니메이션 속도증가
         {
             anim.SetFloat("Attack1Speed", 1.5f);
