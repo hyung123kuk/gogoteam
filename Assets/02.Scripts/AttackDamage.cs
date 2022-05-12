@@ -103,7 +103,7 @@ public class AttackDamage : MonoBehaviour
     void Start()
     {
         playerStat = FindObjectOfType<PlayerStat>();
-        Skill_Buff_Cool();
+        
         
     }
     private void Update()
