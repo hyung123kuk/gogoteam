@@ -31,6 +31,7 @@ public class ComboHit : MonoBehaviour
             if (noOfClicks == 1)
             {
                 anim.SetBool("isAttack", true);
+                Weapons.weapons.StartCoroutine("Swing");
             }
             noOfClicks = Mathf.Clamp(noOfClicks, 0, 3);
         }
@@ -41,8 +42,8 @@ public class ComboHit : MonoBehaviour
         if (noOfClicks >= 2)
         {
             anim.SetBool("isAttack2", true);
-           
-            
+            Weapons.weapons.StartCoroutine("Swing");
+
         }
         else
         {
@@ -55,6 +56,7 @@ public class ComboHit : MonoBehaviour
         if (noOfClicks >= 3)
         {
             anim.SetBool("isAttack3", true);
+            Invoke("ThreeAttack", 0.2f);
             
         }
         else
@@ -69,5 +71,9 @@ public class ComboHit : MonoBehaviour
         anim.SetBool("isAttack2", false);
         anim.SetBool("isAttack", false);
         noOfClicks = 0;
+    }
+    void ThreeAttack()
+    {
+        Weapons.weapons.StartCoroutine("Swing");
     }
 }

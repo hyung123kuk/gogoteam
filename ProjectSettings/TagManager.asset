@@ -32,6 +32,8 @@ TagManager:
   - WALL
   - CCAREA
   - Boom
+  - FxTemporaire
+  - ArrowSkill
   layers:
   - Default
   - TransparentFX
@@ -47,7 +49,7 @@ TagManager:
   - Boss
   - World2
   - Back
-  - 
+  - Skill
   - 
   - 
   - 

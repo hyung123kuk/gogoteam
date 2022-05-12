@@ -13,6 +13,9 @@ public class EnemyGoblin : MonoBehaviour
     public Transform respawn;
     private bool isDie;
 
+    public ParticleSystem Hiteff; //맞을때 이펙트
+    public ParticleSystem Hiteff2; //맞을때 이펙트
+
     Transform target;
     Rigidbody rigid;
     BoxCollider boxCollider;
@@ -143,9 +146,11 @@ public class EnemyGoblin : MonoBehaviour
 
     IEnumerator OnDamage()
     {
+        Hiteff.Play();
+        Hiteff2.Play();
         mat.color = Color.red;
 
-        yield return new WaitForSeconds(0.06f);
+        yield return new WaitForSeconds(0.1f);
 
         if (curHealth > 0)
         {

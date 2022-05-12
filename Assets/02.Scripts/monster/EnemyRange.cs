@@ -14,10 +14,12 @@ public class EnemyRange : MonoBehaviour
     public Transform firepos;
     private bool isDie;
 
+    public ParticleSystem Hiteff; //맞을때 이펙트
+    public ParticleSystem Hiteff2; //맞을때 이펙트
     Transform target;
     Rigidbody rigid;
     BoxCollider boxCollider;
-    SkinnedMeshRenderer[] mat; //피격시 색깔변하게
+    public SkinnedMeshRenderer mat; //피격시 색깔변하게
     NavMeshAgent nav; //추적
     Animator anim;
     
@@ -26,7 +28,6 @@ public class EnemyRange : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody>();
         boxCollider = GetComponent<BoxCollider>();
-        mat = GetComponentsInChildren<SkinnedMeshRenderer>();
         nav = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         
@@ -140,23 +141,21 @@ public class EnemyRange : MonoBehaviour
     }
     IEnumerator OnDamage()
     {
-        foreach (SkinnedMeshRenderer mesh in mat)
-            mesh.material.color = Color.gray;
-
+        Hiteff.Play();
+        Hiteff2.Play();
+        mat.material.color = Color.red;
         yield return new WaitForSeconds(0.1f);
 
         if (curHealth > 0)
         {
+            mat.material.color = Color.white;
             
-            foreach (SkinnedMeshRenderer mesh in mat)
-                mesh.material.color = Color.white;
         }
         else
         {
             nav.isStopped = true;
             boxCollider.enabled = false;
-            foreach (SkinnedMeshRenderer mesh in mat)
-                mesh.material.color = Color.black;
+            mat.material.color = Color.black;
             isDie = true;
             isChase = false; //죽었으니 추적중지
             anim.SetBool("isDie", true);
