@@ -938,7 +938,11 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
+<<<<<<< Updated upstream
   m_IsActive: 1
+=======
+  m_IsActive: 0
+>>>>>>> Stashed changes
 --- !u!4 &796479363843498457
 Transform:
   m_ObjectHideFlags: 0
@@ -946,7 +950,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 800103056784667401}
+<<<<<<< Updated upstream
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+=======
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+>>>>>>> Stashed changes
   m_LocalPosition: {x: 35.1, y: -2.04, z: -88.875}
   m_LocalScale: {x: 3.9261386, y: 3.9261386, z: 3.9261386}
   m_Children:
@@ -968,7 +976,11 @@ Animator:
   m_GameObject: {fileID: 800103056784667401}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 0d3c605385d6d9547a1e3f24e8248962, type: 3}
+<<<<<<< Updated upstream
   m_Controller: {fileID: 9100000, guid: 6486802e66fcc92459a47393bded82d8, type: 2}
+=======
+  m_Controller: {fileID: 9100000, guid: 1b58d63f942126347865fbdde70e67c5, type: 2}
+>>>>>>> Stashed changes
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1044,7 +1056,10 @@ MonoBehaviour:
   curHealth: 50
   meleeArea: {fileID: 800734180802742736}
   nuckArea: {fileID: 2004390599991846365}
+<<<<<<< Updated upstream
   nuckarea: {fileID: 1035099358}
+=======
+>>>>>>> Stashed changes
   isChase: 0
   isAttack: 0
   isRush: 0
@@ -1246,7 +1261,10 @@ GameObject:
   - component: {fileID: 6103386691423946388}
   - component: {fileID: 2004390599991846365}
   - component: {fileID: 6536639902603407049}
+<<<<<<< Updated upstream
   - component: {fileID: 1035099358}
+=======
+>>>>>>> Stashed changes
   m_Layer: 9
   m_Name: StunRange
   m_TagString: Boss1Skill
@@ -1262,8 +1280,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 980324171097911954}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: -1.0288, y: 0.057, z: -0.14867}
   m_LocalScale: {x: 3.0779755, y: 0.10169926, z: 3.0779755}
+=======
+  m_LocalPosition: {x: -1.51, y: 0.057, z: -0.136}
+  m_LocalScale: {x: 4.460834, y: 0.14739023, z: 4.460834}
+>>>>>>> Stashed changes
   m_Children: []
   m_Father: {fileID: 796479363843498457}
   m_RootOrder: 3
@@ -1295,6 +1318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   isMelee: 1
+<<<<<<< Updated upstream
 --- !u!135 &1035099358
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1308,6 +1332,8 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.89993817
   m_Center: {x: -0.3479712, y: 0, z: 0.009159467}
+=======
+>>>>>>> Stashed changes
 --- !u!1 &8789509415857277395
 GameObject:
   m_ObjectHideFlags: 0
@@ -1352,7 +1378,11 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_Intensity: 1000
+<<<<<<< Updated upstream
   m_Range: 12.145859
+=======
+  m_Range: 12.9
+>>>>>>> Stashed changes
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10

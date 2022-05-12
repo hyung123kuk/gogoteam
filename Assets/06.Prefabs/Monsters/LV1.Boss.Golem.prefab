@@ -122,7 +122,11 @@ Transform:
   m_Father: {fileID: 68407620286688840}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
 --- !u!1 &1011496906404373905
+=======
+--- !u!1 &666059122303688280
+>>>>>>> Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,22 +134,36 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 1011496906404411825}
   - component: {fileID: 1011496906386062577}
   - component: {fileID: 1011496906386146641}
   m_Layer: 0
   m_Name: Flash
   m_TagString: Untagged
+=======
+  - component: {fileID: 3848331237526176067}
+  - component: {fileID: 9008772681029395939}
+  - component: {fileID: 3367439766893286317}
+  m_Layer: 9
+  m_Name: StunRange
+  m_TagString: Boss1Skill
+>>>>>>> Stashed changes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< Updated upstream
 --- !u!4 &1011496906404411825
+=======
+--- !u!4 &3848331237526176067
+>>>>>>> Stashed changes
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 1011496906404373905}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.45, y: 0, z: -3.76}
@@ -4829,10 +4847,23 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1011496906394685557
 MonoBehaviour:
+=======
+  m_GameObject: {fileID: 666059122303688280}
+  m_LocalRotation: {x: -0, y: -0.045295533, z: 0, w: -0.9989736}
+  m_LocalPosition: {x: -1.4782034, y: 0.037784245, z: 13.967092}
+  m_LocalScale: {x: 10.184388, y: 0.33650187, z: 10.184388}
+  m_Children: []
+  m_Father: {fileID: 5839282587690823346}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!65 &9008772681029395939
+BoxCollider:
+>>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 1011496906404373917}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -4841,17 +4872,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.5
 --- !u!114 &1124929569295428731
+=======
+  m_GameObject: {fileID: 666059122303688280}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1.6356217, y: 7.4415255, z: 1.3425632}
+  m_Center: {x: -0.317811, y: 3.2207627, z: 0.028476626}
+--- !u!114 &3367439766893286317
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 1011496906404373917}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db08735561a38424182823d8d175333b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+=======
+  m_GameObject: {fileID: 666059122303688280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98e0a7e1141d86145bb71366e9d7f55c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  isMelee: 1
+>>>>>>> Stashed changes
 --- !u!1 &1207239597782162772
 GameObject:
   m_ObjectHideFlags: 0
@@ -5068,6 +5120,7 @@ Transform:
   m_Father: {fileID: 1947679292317415003}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
 --- !u!1 &2131783127350880832
 GameObject:
   m_ObjectHideFlags: 0
@@ -5127,6 +5180,8 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.3756322
   m_Center: {x: -0.40777853, y: 0, z: -0.042937852}
+=======
+>>>>>>> Stashed changes
 --- !u!1 &2370746797858567458
 GameObject:
   m_ObjectHideFlags: 0
@@ -5440,6 +5495,7 @@ Transform:
   m_Father: {fileID: 2600318094375030117}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
 --- !u!1 &3838595238882030447
 GameObject:
   m_ObjectHideFlags: 0
@@ -5470,6 +5526,8 @@ Transform:
   m_Father: {fileID: 5839282587690823346}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> Stashed changes
 --- !u!1 &3881783547692567028
 GameObject:
   m_ObjectHideFlags: 0
@@ -5495,7 +5553,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3881783547692567028}
   m_LocalRotation: {x: -0, y: 0.9989736, z: -0, w: -0.045295533}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: 0.95, y: 1.7863209, z: -0.37}
+=======
+  m_LocalPosition: {x: -3.5556908, y: 1.7863209, z: 13.101577}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 0.58150464, y: 0.5815046, z: 0.58150464}
   m_Children:
   - {fileID: 8359117417167221679}
@@ -5568,6 +5630,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4094251051250286454}
+<<<<<<< Updated upstream
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.741, y: 0.342, z: 0.531}
   m_LocalScale: {x: 0.5251789, y: 0.5251789, z: 0.5251789}
@@ -5575,6 +5638,15 @@ Transform:
   m_Father: {fileID: 5839282587690823346}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+  m_LocalRotation: {x: -0, y: -0.9989736, z: -0, w: 0.045295533}
+  m_LocalPosition: {x: 2.5485008, y: 0.6804161, z: -3.4143276}
+  m_LocalScale: {x: 0.52517885, y: 0.5251788, z: 0.52517885}
+  m_Children: []
+  m_Father: {fileID: 5839282587690823346}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+>>>>>>> Stashed changes
 --- !u!1 &4154738856506720161
 GameObject:
   m_ObjectHideFlags: 0
@@ -5617,6 +5689,10 @@ GameObject:
   - component: {fileID: 7519263471556360617}
   - component: {fileID: 333856187069797911}
   - component: {fileID: 5400100004487419921}
+<<<<<<< Updated upstream
+=======
+  - component: {fileID: 4898733278378262960}
+>>>>>>> Stashed changes
   m_Layer: 9
   m_Name: EnemyRange
   m_TagString: EnemyRange
@@ -5631,13 +5707,22 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4313241200217891045}
+<<<<<<< Updated upstream
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.561, y: 0.057787918, z: 2.122}
+=======
+  m_LocalRotation: {x: -0, y: -0.045295533, z: 0, w: -0.9989736}
+  m_LocalPosition: {x: -4.470723, y: 0.057787854, z: 12.015322}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 1.3213542, y: 1.0787665, z: 1.3213542}
   m_Children: []
   m_Father: {fileID: 5839282587690823346}
   m_RootOrder: 2
+<<<<<<< Updated upstream
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+>>>>>>> Stashed changes
 --- !u!65 &333856187069797911
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5649,8 +5734,13 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 0
   serializedVersion: 2
+<<<<<<< Updated upstream
   m_Size: {x: 1.8629223, y: 1, z: 1.2160293}
   m_Center: {x: -0.43146145, y: 0, z: -0.8538012}
+=======
+  m_Size: {x: 1.735796, y: 1, z: 1.9263082}
+  m_Center: {x: -0.3678983, y: 0, z: 0.00383148}
+>>>>>>> Stashed changes
 --- !u!114 &5400100004487419921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5665,6 +5755,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   isMelee: 1
+<<<<<<< Updated upstream
+=======
+--- !u!54 &4898733278378262960
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4313241200217891045}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+>>>>>>> Stashed changes
 --- !u!1 &4353195578654761119
 GameObject:
   m_ObjectHideFlags: 0
@@ -5690,7 +5799,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4353195578654761119}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: 1.53, y: 1.267878, z: -0.04}
+=======
+  m_LocalPosition: {x: 2.64, y: 1.267878, z: -1.86}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2091788152503701899}
@@ -5709,7 +5822,11 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_Intensity: 1000
+<<<<<<< Updated upstream
   m_Range: 18.5
+=======
+  m_Range: 12.9
+>>>>>>> Stashed changes
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -5851,6 +5968,7 @@ Transform:
   m_Father: {fileID: 843692476748368249}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
 --- !u!1 &4708358360130498631
 GameObject:
   m_ObjectHideFlags: 0
@@ -24688,6 +24806,8 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+=======
+>>>>>>> Stashed changes
 --- !u!1 &4998086251741224407
 GameObject:
   m_ObjectHideFlags: 0
@@ -25187,6 +25307,7 @@ Transform:
   - {fileID: 3433883323335830039}
   - {fileID: 7969292681889980569}
   - {fileID: 7519263471556360617}
+<<<<<<< Updated upstream
   - {fileID: 3126628275227852014}
   - {fileID: 2091788152503701899}
   - {fileID: 2038503711}
@@ -25195,6 +25316,11 @@ Transform:
   - {fileID: 2535660645065802257}
   - {fileID: 4866665007898808683}
   - {fileID: 1011496906404411837}
+=======
+  - {fileID: 3848331237526176067}
+  - {fileID: 2091788152503701899}
+  - {fileID: 3126628275227852014}
+>>>>>>> Stashed changes
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -185.192, z: 0}
@@ -25208,7 +25334,11 @@ Animator:
   m_GameObject: {fileID: 6503932609576252424}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: dae1b2a630c2103408eac1778b720b71, type: 3}
+<<<<<<< Updated upstream
   m_Controller: {fileID: 9100000, guid: 491ba99d1315b3c419f23ef95e2fb21a, type: 2}
+=======
+  m_Controller: {fileID: 9100000, guid: 75cabacce08bf8742838e3b2c01b2166, type: 2}
+>>>>>>> Stashed changes
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -25283,6 +25413,7 @@ MonoBehaviour:
   maxHealth: 100
   curHealth: 100
   meleeArea: {fileID: 333856187069797911}
+<<<<<<< Updated upstream
   isChase: 0
   isAttack: 0
   isDie: 0
@@ -25298,6 +25429,13 @@ MonoBehaviour:
   fokjupos: {fileID: 2398963952114062420}
   Shpos1: {fileID: 4401587751636372902}
   Shpos2: {fileID: 2535660645065802257}
+=======
+  nuckArea: {fileID: 9008772681029395939}
+  isChase: 0
+  isAttack: 0
+  isDie: 0
+  respawn: {fileID: 0}
+>>>>>>> Stashed changes
 --- !u!1 &6628884291029581329
 GameObject:
   m_ObjectHideFlags: 0
@@ -26115,6 +26253,7 @@ Transform:
   m_Father: {fileID: 6635213846615594122}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
 --- !u!1001 &381026407377973768
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26198,3 +26337,5 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 381026408023471927, guid: df3a9c2b5380f22478edb328412c6f30, type: 3}
   m_PrefabInstance: {fileID: 381026407377973768}
   m_PrefabAsset: {fileID: 0}
+=======
+>>>>>>> Stashed changes

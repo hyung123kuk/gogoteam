@@ -81,7 +81,11 @@ public class EnemyBoss1 : MonoBehaviour
         }
 
         if (isChase || isAttack)
+<<<<<<< Updated upstream
             if(!isDie && !PlayerST.isJump && !PlayerST.isFall)
+=======
+            if(!isDie)
+>>>>>>> Stashed changes
             transform.LookAt(target); //플레이어 바라보기
         
     }
@@ -89,11 +93,19 @@ public class EnemyBoss1 : MonoBehaviour
 
     IEnumerator Pattern() //보스패턴
     {
+<<<<<<< Updated upstream
         
             yield return new WaitForSeconds(6f);
         if (!isDie)
         {
             int ranAction = Random.Range(0, 3);
+=======
+        if (!isDie)
+        {
+            yield return new WaitForSeconds(6f);
+
+            int ranAction = Random.Range(0, 9);
+>>>>>>> Stashed changes
             switch (ranAction)
             {
                 case 0:
@@ -156,6 +168,7 @@ public class EnemyBoss1 : MonoBehaviour
         nav.isStopped = true;
         stunarea.enabled = true;
         anim.SetBool("isRun", false);
+<<<<<<< Updated upstream
         anim.SetBool("isAttack", false);
         yield return new WaitForSeconds(2f);
         anim.SetBool("isStun", true);
@@ -167,6 +180,17 @@ public class EnemyBoss1 : MonoBehaviour
         anim.SetBool("isStun", false);
 
         
+=======
+        yield return new WaitForSeconds(2f);
+        anim.SetBool("isStun", true);
+        nuckArea.enabled = true;
+        stunarea.enabled = false;
+        rigid.velocity = Vector3.zero;
+        yield return new WaitForSeconds(1f);
+        anim.SetBool("isStun", false);
+        
+        nuckArea.enabled = false;
+>>>>>>> Stashed changes
         isStun = false;
         isChase = true;
         isAttack = false;

@@ -33,10 +33,13 @@ public class EnemyRange : MonoBehaviour
     }
     void Update()
     {
+<<<<<<< Updated upstream
         if (isDie)  //죽었으면 현재실행중인 코로틴 강제종료
         {
             StopAllCoroutines();
         }
+=======
+>>>>>>> Stashed changes
         target = GameObject.FindGameObjectWithTag("Player").transform;
         Targerting();
         if (Vector3.Distance(target.position, transform.position) <= 25f && nav.enabled) //15미터 안에 포착

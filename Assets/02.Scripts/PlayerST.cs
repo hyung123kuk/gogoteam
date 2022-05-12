@@ -506,6 +506,7 @@ public class PlayerST : MonoBehaviour
                 isRun = false;
                 _transform.Translate(moveVec.normalized * Time.deltaTime * speed, Space.Self);
             }
+<<<<<<< Updated upstream
         }
     }
     void WarriorMove()
@@ -526,6 +527,14 @@ public class PlayerST : MonoBehaviour
                 _transform.Translate(moveVec.normalized * Time.deltaTime * speed, Space.Self);
             }
         }
+=======
+        //Debug.Log("shield");
+            Anima(); //애니메이션
+            Attack(); //근접 공격
+            Jump(); //점프
+            Dodge(); //구르기
+        
+>>>>>>> Stashed changes
     }
     void FreezeVelocity()  //카메라 버그 안생기게하는거
     {
@@ -551,19 +560,27 @@ public class PlayerST : MonoBehaviour
                 Debug.Log("아야!");
                 EnemyAttack enemyRange = other.GetComponent<EnemyAttack>();
                 health -= enemyRange.damage;
+
+                
+
                 StartCoroutine(OnDamage());
 
             }
         }
         else if (other.gameObject.tag == "Boss1Skill")  //1보스 스턴스킬
         {
+<<<<<<< Updated upstream
             if (!isDamage) //무적타이밍이 아닐때만 실행
+=======
+            if (!isDamage)
+>>>>>>> Stashed changes
             {
                 EnemyAttack enemyRange = other.GetComponent<EnemyAttack>();
                 health -= enemyRange.damage;
 
                 StartCoroutine(OnDamageNuck());
             }
+<<<<<<< Updated upstream
         }
         else if (other.gameObject.tag == "Boss2Skill")  //최종보스 1.5초스턴스킬
         {
@@ -586,6 +603,8 @@ public class PlayerST : MonoBehaviour
                 StartCoroutine(OnDamageNuck3());
             }
 
+=======
+>>>>>>> Stashed changes
         }
     }
     void OnCollisionEnter(Collision collision)
@@ -613,6 +632,7 @@ public class PlayerST : MonoBehaviour
 
     IEnumerator OnDamage() //무적타임
     {
+        Debug.Log("아야!");
         isDamage = true; //무적타임 true
 
         yield return new WaitForSeconds(1f);

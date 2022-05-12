@@ -11,7 +11,11 @@ GameObject:
   - component: {fileID: 6518450550645942703}
   m_Layer: 6
   m_Name: FireballPos
+<<<<<<< Updated upstream
   m_TagString: Enemy
+=======
+  m_TagString: Untagged
+>>>>>>> Stashed changes
   m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39,7 +43,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280737}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: forearm.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +78,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280739}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: foot.R.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +112,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280741}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: forearm.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,7 +147,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280743}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: forearm.L.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,7 +181,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280745}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: foot.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -192,7 +216,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280747}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: faUho_R.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222,7 +250,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280749}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: foot.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -253,7 +285,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280751}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: foot.L.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -283,7 +319,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280753}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: hand.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -316,7 +356,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280755}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: hand.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -349,7 +393,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280757}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: Luk.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -380,7 +428,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280759}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: Luk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -418,9 +470,15 @@ GameObject:
   - component: {fileID: 3699856991197882084}
   - component: {fileID: 3699856991197882087}
   - component: {fileID: 3699856991197882086}
+<<<<<<< Updated upstream
   m_Layer: 6
   m_Name: LV1.GoblinArcher
   m_TagString: Enemy
+=======
+  m_Layer: 0
+  m_Name: LV1.GoblinArcher
+  m_TagString: Untagged
+>>>>>>> Stashed changes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -541,7 +599,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280763}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: forearm.R.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -572,9 +634,15 @@ GameObject:
   m_Component:
   - component: {fileID: 3699856991198280765}
   - component: {fileID: 3699856991209483593}
+<<<<<<< Updated upstream
   m_Layer: 6
   m_Name: Goblin Necro Bow Quiver
   m_TagString: Enemy
+=======
+  m_Layer: 0
+  m_Name: Goblin Necro Bow Quiver
+  m_TagString: Untagged
+>>>>>>> Stashed changes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -740,9 +808,15 @@ GameObject:
   m_Component:
   - component: {fileID: 3699856991198280767}
   - component: {fileID: 3699856991209483595}
+<<<<<<< Updated upstream
   m_Layer: 6
   m_Name: 'Goblin Necro '
   m_TagString: Enemy
+=======
+  m_Layer: 0
+  m_Name: 'Goblin Necro '
+  m_TagString: Untagged
+>>>>>>> Stashed changes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -907,7 +981,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280769}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: faHvost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -938,7 +1016,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280771}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: faChelust.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -968,7 +1050,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280773}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: faHvost.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -999,7 +1085,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280775}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: faHvost.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1030,7 +1120,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280777}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: facGlaz
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1060,7 +1154,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280779}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: face
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1097,7 +1195,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280781}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: faChelust
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1127,7 +1229,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280783}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: facGlaz.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1157,7 +1263,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280785}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: faUho_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1188,7 +1298,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280787}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: faHvost.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1218,7 +1332,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280789}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: faUho_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1249,7 +1367,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280791}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: faUho_L.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1279,7 +1401,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280793}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: faHvost.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1310,7 +1436,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280795}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: faHvost.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1341,7 +1471,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280797}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: faHvost.01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1372,7 +1506,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280799}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: faHvost.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1403,7 +1541,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280801}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: f_index.01.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1434,7 +1576,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280803}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: f_index.01.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1465,7 +1611,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280805}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: f_index.02.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1496,7 +1646,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280807}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: f_index.02.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1527,7 +1681,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280809}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: Colhan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1557,7 +1715,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280811}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: BeG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1594,7 +1756,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280813}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: Colhan.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1624,7 +1790,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280815}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: Colhan.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1654,7 +1824,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280817}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: f_ring.02.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1685,7 +1859,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280819}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: f_ring.02.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1716,7 +1894,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280821}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: f_ring.03.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1746,7 +1928,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280823}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: f_ring.03.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1776,7 +1962,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280825}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: f_index.03.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1806,7 +1996,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280827}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: f_index.03.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1836,7 +2030,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280829}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: f_ring.01.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1867,7 +2065,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280831}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: f_ring.01.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1898,7 +2100,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198281153}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: toe.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1928,7 +2134,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198281155}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: thumb.03.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1958,7 +2168,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198281157}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: upper_arm.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1989,7 +2203,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198281159}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: toe.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2019,7 +2237,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198281161}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: thumb.02.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2050,7 +2272,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198281163}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: thumb.01.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2081,7 +2307,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198281165}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: thumb.03.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2111,7 +2341,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198281167}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: thumb.02.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2142,7 +2376,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198281179}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: upper_arm.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2173,7 +2411,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198281185}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: ShtanuZ.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2204,7 +2446,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198281187}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: ShtanuZ
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2235,7 +2481,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198281189}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: ShtanuZ.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2266,7 +2516,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198281191}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: ShtanuZ.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2297,7 +2551,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198281193}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: ShtanuS.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2328,7 +2586,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198281195}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: ShtanuS.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2359,7 +2621,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198281197}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: ShtanuS.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2389,7 +2655,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198281199}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: ShtanuS.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2420,7 +2690,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198281201}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: thigh.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2451,7 +2725,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198281203}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: spine.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2482,7 +2760,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198281205}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: thumb.01.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2513,7 +2795,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198281207}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: thigh.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2544,7 +2830,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198281209}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2579,7 +2869,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198281211}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: ShtanuZ.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2609,7 +2903,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198281213}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: spine.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2645,7 +2943,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198281215}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: spine.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2676,9 +2978,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280705}
+<<<<<<< Updated upstream
   m_Layer: 6
   m_Name: metarig
   m_TagString: Enemy
+=======
+  m_Layer: 0
+  m_Name: metarig
+  m_TagString: Untagged
+>>>>>>> Stashed changes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2710,7 +3018,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280707}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: LukTetiva
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2740,7 +3052,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280709}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2771,7 +3087,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280711}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: Naplech.L.
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2801,7 +3121,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280713}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: Luk.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2832,7 +3156,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280715}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: Luk.L.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2862,7 +3190,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280717}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: LukStrela
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2892,7 +3224,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280719}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: Luk.R.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2922,7 +3258,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280721}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: shoulder.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2954,7 +3294,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280723}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: shNoj.L.
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2984,7 +3328,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280725}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: ShtanuS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3015,7 +3363,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280727}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: shoulder.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3046,7 +3398,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280729}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: shin.L.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3076,7 +3432,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280731}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: shin.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3107,7 +3467,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280733}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: shin.R.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3137,7 +3501,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3699856991198280735}
+<<<<<<< Updated upstream
   m_Layer: 6
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: shin.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
