@@ -33,7 +33,19 @@ TagManager:
   - CCAREA
   - Boom
   - FxTemporaire
-  - ArrowSkill
+  - SKILLSLOT1
+  - SKILLSLOT2
+  - SKILLSLOT3
+  - SKILLSLOT4
+  - HealthSprite
+  - ManaSprite
+  - quik1
+  - quik2
+  - quik3
+  - quik4
+  - quik5
+  - quik6
+  - quik7
   layers:
   - Default
   - TransparentFX
@@ -49,7 +61,7 @@ TagManager:
   - Boss
   - World2
   - Back
-  - Skill
+  - 
   - 
   - 
   - 
@@ -65,8 +77,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - quikSlot
+  - SkillSlot
   m_SortingLayers:
   - name: Default
     uniqueID: 0

@@ -24,7 +24,7 @@ public class EnemyBoss1 : MonoBehaviour
     Transform target;
     Rigidbody rigid;
     BoxCollider boxCollider;
-   // SkinnedMeshRenderer[] mat; //피격시 색깔변하게
+    SkinnedMeshRenderer[] mat; //피격시 색깔변하게
     NavMeshAgent nav; //추적
     Animator anim;
 
@@ -33,7 +33,7 @@ public class EnemyBoss1 : MonoBehaviour
         stunarea = GetComponentInChildren<Light>();
         rigid = GetComponent<Rigidbody>();
         boxCollider = GetComponent<BoxCollider>();
-     //   mat = GetComponentsInChildren<SkinnedMeshRenderer>();
+        mat = GetComponentsInChildren<SkinnedMeshRenderer>();
         nav = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         StartCoroutine(Pattern());
@@ -287,22 +287,26 @@ public class EnemyBoss1 : MonoBehaviour
 
     IEnumerator OnDamage()
     {
-        if (curHealth < 0)
+        foreach (SkinnedMeshRenderer mesh in mat)
+            mesh.material.color = Color.red;
+
+        yield return new WaitForSeconds(0.1f);
+
+        if (curHealth > 0)
+        {
+            foreach (SkinnedMeshRenderer mesh in mat)
+                mesh.material.color = Color.white;
+        }
+        else
         {
             nav.isStopped = true;
             isDie = true;
             boxCollider.enabled = false;
-            //foreach (SkinnedMeshRenderer mesh in mat)
-            // mesh.material.color = Color.white;
+            foreach (SkinnedMeshRenderer mesh in mat)
+                mesh.material.color = Color.white;
             isChase = false; //죽었으니 추적중지
-            anim.SetBool("isDie", true);
+            anim.SetBool("isDie",true);
             Destroy(gameObject, 200f);
         }
-        
-
-        yield return null;
-        
-            
-        
     }
 }

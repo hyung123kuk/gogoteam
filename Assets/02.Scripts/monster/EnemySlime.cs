@@ -14,9 +14,6 @@ public class EnemySlime : MonoBehaviour
     public Transform respawn;
     private bool isDie;
 
-    public ParticleSystem Hiteff; //맞을때 이펙트
-    public ParticleSystem Hiteff2; //맞을때 이펙트
-
     Transform target;
     Rigidbody rigid;
     BoxCollider boxCollider;
@@ -136,23 +133,15 @@ public class EnemySlime : MonoBehaviour
             
             StartCoroutine(OnDamage());
         }
-        else if (other.tag == "ArrowSkill")
-        {
-            ArrowSkill arrow = other.GetComponent<ArrowSkill>();
-            curHealth -= arrow.damage;
-
-            StartCoroutine(OnDamage());
-        }
     }
 
     IEnumerator OnDamage() 
     {
         mat.color = Color.red;
-        Hiteff.Play();
-        Hiteff2.Play();
+        
         yield return new WaitForSeconds(0.1f);
 
-        if (curHealth>0)
+        if(curHealth>0)
         {
             mat.color = Color.white;
         }

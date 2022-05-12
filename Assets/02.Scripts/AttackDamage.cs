@@ -15,19 +15,10 @@ public class AttackDamage : MonoBehaviour
     [SerializeField]
     private float Skill_Buff_duration = 3;
     public bool Duration_Buff = false;
-
+    [Header("스킬 사용 마나")]
     [SerializeField]
-    [Header("스킬 기본 쿨타임")]
-    [Header("       마법사용 우클릭스킬")]
-    private float Skill_Teleport_cooltime = 5;    //스킬의 기본 쿨타임 이후 쿨타임 감소 적용되서 값 나옴
-    public bool Usable_Teleport = true;
+    private float Skill_Buff_use_Mp = 50;
 
-
-    [SerializeField]
-    [Header("스킬 기본 쿨타임")]
-    [Header("       구르기 입니당")]
-    private float Skill_Dodge_cooltime = 10;    //스킬의 기본 쿨타임 이후 쿨타임 감소 적용되서 값 나옴
-    public bool Usable_Dodge = true;
 
     //스킬 퍼뎀 : 캐릭터 공격력에 배수 ex) 1.2 넣으면 캐릭터 공격력의 1.2배의 데미지가 들어간다.
     //스킬 고정뎀 : 캐릭터 공격력에 추가된다고 생각하면 됨.
@@ -43,6 +34,9 @@ public class AttackDamage : MonoBehaviour
     [SerializeField]
     private float Skill_1_cooltime=5;    //스킬의 기본 쿨타임 이후 쿨타임 감소 적용되서 값 나옴
     public bool Usable_Skill1 = true; //스킬 사용 가능 할때 true로 바뀜
+    [Header("스킬 사용 마나")]
+    [SerializeField]
+    private float Skill_1_use_Mp = 50;
 
 
     [Header("스킬 퍼뎀")]
@@ -56,6 +50,9 @@ public class AttackDamage : MonoBehaviour
     [SerializeField]
     private float Skill_2_cooltime = 5;
     public bool Usable_Skill2 = true;
+    [Header("스킬 사용 마나")]
+    [SerializeField]
+    private float Skill_2_use_Mp = 50;
 
     [Header("스킬 퍼뎀")]
     [Header("       3번 스킬")]
@@ -68,6 +65,9 @@ public class AttackDamage : MonoBehaviour
     [SerializeField]
     private float Skill_3_cooltime = 5;
     public bool Usable_Skill3 = true;
+    [Header("스킬 사용 마나")]
+    [SerializeField]
+    private float Skill_3_use_Mp = 50;
 
     [Header("스킬 퍼뎀")]
     [Header("       4번 스킬")]
@@ -80,16 +80,14 @@ public class AttackDamage : MonoBehaviour
     [SerializeField]
     private float Skill_4_cooltime = 5;
     public bool Usable_Skill4 = true;
-
-
+    [Header("스킬 사용 마나")]
+    [SerializeField]
+    private float Skill_4_use_Mp = 50;
 
     float SkillBuff_time;
     float SkillBuff_passedTime;
-    float SkillTeleport_time;
-    float SkillTeleport_passedTime;
-    float SkillDodge_time;
-    float SkillDodge_passedTime;
 
+   
     float SkillBuff_passedDurationgTime;
 
     float Skill1_time;         //쿨타임 감소 적용 스킬 타임
@@ -105,7 +103,7 @@ public class AttackDamage : MonoBehaviour
     void Start()
     {
         playerStat = FindObjectOfType<PlayerStat>();
-       // Skill_Buff_Cool();
+        Skill_Buff_Cool();
         
     }
     private void Update()
@@ -201,53 +199,46 @@ public class AttackDamage : MonoBehaviour
 
     public void Skill_Buff_Cool()
     {
+        playerStat.SkillMp(Skill_Buff_use_Mp);
         SkillBuff_time = Skill_Buff_cooltime - Skill_Buff_cooltime * playerStat._SKILL_COOLTIME_DEC_PER / 100;
         SkillBuff_passedTime = 0f;
         SkillBuff_passedDurationgTime=0f;
         Duration_Buff = true;
         Usable_Buff = false;
     }
-    public void Skill_Mage_Teleport_Cool()
-    {
-        SkillTeleport_time = Skill_Teleport_cooltime - Skill_Teleport_cooltime * playerStat._SKILL_COOLTIME_DEC_PER / 100;
-        SkillTeleport_passedTime = 0f;
-        Usable_Teleport = false;
-    }
-    public void Skill_Dodge_Cool()
-    {
-        SkillDodge_time = Skill_Dodge_cooltime - Skill_Dodge_cooltime * playerStat._SKILL_COOLTIME_DEC_PER / 100;
-        SkillDodge_passedTime = 0f;
-        Usable_Dodge = false;
-    }
 
 
     public void Skill_1_Cool()
     {
+        playerStat.SkillMp(Skill_1_use_Mp);
         Skill1_time = Skill_1_cooltime - Skill_1_cooltime * playerStat._SKILL_COOLTIME_DEC_PER / 100;
         Skill1_passedTime = 0f;
         Usable_Skill1 = false;
     }
     public void Skill_2_Cool()
     {
+        playerStat.SkillMp(Skill_2_use_Mp);
         Skill2_time = Skill_2_cooltime - Skill_2_cooltime * playerStat._SKILL_COOLTIME_DEC_PER / 100;
         Skill2_passedTime = 0f;
         Usable_Skill2 = false;
     }
     public void Skill_3_Cool()
     {
+        playerStat.SkillMp(Skill_3_use_Mp);
         Skill3_time = Skill_3_cooltime - Skill_3_cooltime * playerStat._SKILL_COOLTIME_DEC_PER / 100;
         Skill3_passedTime = 0f;
-        Usable_Skill3 = false;
+        Usable_Skill1 = false;
     }
     public void Skill_4_Cool()
     {
+        playerStat.SkillMp(Skill_4_use_Mp);
         Skill4_time = Skill_4_cooltime - Skill_4_cooltime * playerStat._SKILL_COOLTIME_DEC_PER / 100;
         Skill4_passedTime = 0f;
-        Usable_Skill4 = false;
+        Usable_Skill1 = false;
     }
 
 
-    public void SkillPassedTimeFucn()
+    private void SkillPassedTimeFucn()
     {
 
         if (!Usable_Buff)
@@ -262,30 +253,7 @@ public class AttackDamage : MonoBehaviour
             }
         }
 
-        if (!Usable_Teleport)
-        {
-            SkillTeleport_passedTime += Time.deltaTime;
-            if (SkillTeleport_time < SkillTeleport_passedTime)
-            {
-                Debug.Log(SkillTeleport_passedTime);
-                SkillTeleport_passedTime = 0f;
-                Usable_Teleport = true;
-
-            }
-        }
-        if (!Usable_Dodge)
-        {
-            SkillDodge_passedTime += Time.deltaTime;
-            if (SkillDodge_time < SkillDodge_passedTime)
-            {
-                Debug.Log(SkillDodge_passedTime);
-                SkillDodge_passedTime = 0f;
-                Usable_Dodge = true;
-
-            }
-        }
-
-        if (Duration_Buff)
+        if(Duration_Buff)
         {
             SkillBuff_passedDurationgTime += Time.deltaTime;
             if(Skill_Buff_duration < SkillBuff_passedDurationgTime)
@@ -314,7 +282,7 @@ public class AttackDamage : MonoBehaviour
             {
                 Debug.Log(Skill2_passedTime);
                 Skill2_passedTime = 0f;
-                Usable_Skill2 = true;
+                Usable_Skill1 = true;
             }
         }
         if (!Usable_Skill3)
@@ -324,7 +292,7 @@ public class AttackDamage : MonoBehaviour
             {
                 Debug.Log(Skill3_passedTime);
                 Skill3_passedTime = 0f;
-                Usable_Skill3 = true;
+                Usable_Skill1 = true;
             }
         }
         if (!Usable_Skill4)
@@ -334,7 +302,7 @@ public class AttackDamage : MonoBehaviour
             {
                 Debug.Log(Skill4_passedTime);
                 Skill4_passedTime = 0f;
-                Usable_Skill4 = true;
+                Usable_Skill1 = true;
             }
         }
     }

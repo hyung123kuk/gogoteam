@@ -34,16 +34,25 @@ public class PlayerStat : MonoBehaviour
     private PlayerST playerST; // 0 => 전사 , 1 => 궁수 , 2 => 법사
     [SerializeField]
     private inventory inven;
+    [SerializeField]
+    private GameUI gameUI;
     public Slot[] equSlots;
 
     void Start()
     {
         playerST = GetComponent<PlayerST>();
         inven = FindObjectOfType<inventory>();
+        gameUI = FindObjectOfType<GameUI>();
         StatAllUpdate();
         TotalExp = LevelExp();
         _Hp = _MAXHP;
         _Mp = _MAXMP;
+        gameUI.Hp_bar.text.text = (int)_Hp + "/" + (int)_MAXHP;
+        gameUI.Mp_bar.text.text = (int)_Mp + "/" + (int)_MAXMP;
+        gameUI.level_Text.text = "LV." + Level;
+        gameUI.Exp_Text.text = (int)NowExp + "/" + (int)TotalExp +"  ("+ (int)(NowExp / TotalExp * 100) + "%)" ; 
+        gameUI.ExpSet();
+
     }
 
     private void Update()
@@ -130,7 +139,7 @@ public class PlayerStat : MonoBehaviour
         _CRITICAL_PROBABILITY += (_STR * 0.25f) + (_DEX * 0.25f);
         _CRITICAL_ADD_DAMAGE_PER += (30 + (_STR * 1f) + (_DEX * 0.5f));
         _MOVE_SPEED += _DEX * 0.5f;
-
+        MaxSet();
 
     }
 
@@ -147,6 +156,7 @@ public class PlayerStat : MonoBehaviour
         {
             NowExp += _Exp;
             ExpFunc();
+            gameUI.ExpSet();
         }
     }
 
@@ -160,6 +170,9 @@ public class PlayerStat : MonoBehaviour
             StatAllUpdate();
             _Hp = _MAXHP;
             _Mp = _MAXMP;
+            gameUI.bar_set();
+            gameUI.LevelSet();
+            gameUI.ExpSet();
         }
     }
 
@@ -211,6 +224,59 @@ public class PlayerStat : MonoBehaviour
         _Mp += _MAXMP * _Mp_per / 100;
         if (_Mp > _MAXMP)
             _Hp = _MAXMP;
+    }
+    public void MaxHpSet()
+    {
+        if (_Hp > _MAXHP)
+            _Hp = _MAXHP;
+    }
+    public void MaxMpSet()
+    {
+        if (_Mp > _MAXMP)
+            _Mp = _MAXMP;
+    }
+    public void MaxSet()
+    {
+        MaxHpSet();
+        MaxMpSet();
+    }
+
+    public void DamagedHp(float _damage)
+    {
+        _damage = _damage * Random.Range(0.95f, 1.05f);
+
+        if (_DEFENCE >= _damage)
+        {
+            _Hp--;
+        }
+        else
+        {
+            _Hp -= (_damage - _DEFENCE);
+        }
+        
+        if(_Hp <= 0)
+        {
+            _Hp = 0;
+            Debug.Log("플레이어 사망 ㅜ");
+        }
+        gameUI.bar_set();
+
+    }
+
+
+
+    public void SkillMp(float UseMp)
+    {
+        if (_Mp > UseMp)
+        {
+            _Mp -= UseMp;
+        }
+        else
+        {
+            _Mp = 0;
+            Debug.Log("마나 부족한데....");
+        }
+        gameUI.bar_set();
     }
 
 }

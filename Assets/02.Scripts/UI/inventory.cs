@@ -165,6 +165,44 @@ public class inventory : MonoBehaviour ,IPointerClickHandler,IEndDragHandler
        
     }
 
+    public void addItem(Item item, int num = 0) //같은 아이템이 있거나 빈창이있을때 넣는다.
+    {
+
+        if (item.itemType == Item.ItemType.Used)
+        {
+            for (int i = 0; i < slots.Length; i++)
+            {
+                if (item == slots[i].item)
+                {
+
+                    slots[i].SetSlotCount(num);
+                    return;
+                }
+            }
+        }
+
+
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (slots[i].item == null)
+            {
+                if (item.itemType == Item.ItemType.Used)
+                {
+                    slots[i].SetSlotCount(num);
+                  
+                }
+
+                slots[i].item = item;
+                slots[i].itemImage.sprite = slots[i].item.itemImage;
+                slots[i].SetColor(1);
+                slots[i].ItemLimitColorRed();
+                return;
+            }
+
+        }
+    }
+
+
     public void OnPointerClick(PointerEventData eventData)
     {
         allUI.InvenTop();
